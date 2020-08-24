@@ -1,0 +1,446 @@
+
+
+
+\section{Généralités sur les isométries}
+
+\begin{definition}
+Soit $f : \mathcal P \to \mathcal P$. On dit que $f$ est une \emph{isométrie} si
+\[ \forall M, M' \in \mathcal P, \dist(M,M') = \dist(f(M),f(M'))\]
+\end{definition}
+
+Cela signifie que si deux points sont à une certaine distance $d$ l'un de l'autre, leurs images seront exactement à la même distance $d$ l'une de l'autre.
+
+
+
+\begin{proposition}
+Une isométrie  est injective.
+\end{proposition}
+\begin{proof}
+Soit $f$ une isométrie et soient $M$ et $M'$ des points tels que $f(M)=f(M')$. En reformulant, on a donc $\dist(f(M), f(M'))=0$. Comme $f$ est une isométrie, on en déduit $\dist(M,M')=0$, autrement dit $M=M'$. Ceci montre que $f$ est injective.
+\end{proof}
+
+
+
+
+\begin{proposition}
+Une isométrie plane est bijective.
+\end{proposition}
+\begin{proof}
+On admet ce résultat, dont la démonstration n'est pas immédiate (mais peut néanmoins se faire de manière relativement élémentaire). Lorsque ce sera possible, on montrera à la main que telle ou telle isométrie est bien surjective pour limiter au maximum la part de résultats admis.
+\end{proof}
+
+\begin{proposition}
+\begin{enumerate}
+\item La composée de deux isométries est une isométrie. 
+\item L'application réciproque d'une isométrie est une isométrie.
+\end{enumerate}
+On résume ces deux propriétés en disant que les \og isométries forment un \emph{groupe} pour la composition\fg.
+\end{proposition}
+\begin{proof}
+\begin{enumerate}
+\item Soient $f$ et $g$ des isométries. Montrons que $g\circ f$ est également une isométrie.
+Soient $A$ et $B$ deux points du plan. On a alors:
+\begin{align*}
+\dist(A,B)
+&= \dist(f(A),f(B) & \text{car $f$ est une isométrie}\\
+&= \dist(g(f(A)),g(f(B)) & \text{car $g$ est une isométrie}\\
+\end{align*}
+D'où $\dist(A,B) = \dist(g\circ f(A),g\circ f(B))$, ce qui montre que $g\circ f$ est une isométrie.
+\item Soit $f$ une isométrie et $g$ son application réciproque (on a admis qu'une isométrie était bijective, elle possède donc une bijection réciproque). Soient $A$ et $B$ deux points. Alors  on a 
+\begin{align*}
+\dist(g(A),g(B))
+&= \dist(f(g(A)),f(g(B))) & \text{car $f$ est une isométrie}\\
+&= \dist(A,B)& \text{car $f\circ g=\Id_{\mathcal P}$}\\
+\end{align*}
+Ceci montre que $g$ est une isométrie.
+\end{enumerate}
+\end{proof}
+
+On pourrait dire bien plus de choses sur les isométries de façon générale, mais cela augmenterait sensiblement la technicité du texte. Le parti pris dans ce cours est d'aller en priorité vers l'étude d'exemples concrets (rotations, translations) puis vers les similitudes directes, et de reporter à plus tard (L2) l'étude générale des isométries planes (directes ou indirectes) et  leur classification, une fois que les techniques d'algèbre linéaire (et bilinéaire) seront à disposition.
+
+On ajoute toutefois quelques petits résultats généraux sur les isométries, que l'on peut démontrer simplement avec des outils élémentaires.
+
+\begin{proposition}
+Une isométrie conserve les milieux. Autrement dit, si $f : \mathcal P\to \mathcal P$ et $A$ et $B$ sont deux points distincts et $M$ le milieu de $[AB]$, alors $f(M)$ est le milieu de $[f(A)f(B)]$.
+\end{proposition}
+\begin{proof}
+On a $AM=MB=\frac12AB$ et comme $f$ est une isométrie, on a également $f(A)f(M)=f(M)f(B)=\frac12f(A)f(B)$. D'après l'inégalité triangulaire, ceci montre que $f(M)$ est le milieu de $[f(A)f(B)]$.
+\end{proof}
+%\begin{remarque}
+%Pour ceux qui savent ce qu'est un barycentre, les isométries conservent également les barycentres, pas simplement les milieux.
+%\end{remarque}
+
+\begin{proposition}[Conservation de l'alignement]
+Soit $f : \mathcal P\to \mathcal P$ une isométrie, $A$, $B$ et $C$ trois points distincts et $A'$, $B'$ et $C'$ leurs images par $f$. Alors $A$, $B$ et $C$ sont alignés si et seulement si $A'$, $B'$ et $C'$ sont alignés. Si c'est le cas, l'ordre d'alignement est le même.
+\end{proposition}
+\begin{proof}
+Si $A$, $B$ et $C$ sont alignés, il y en a un des trois qui est entre les deux autres. Mettons que ce soit $B$, et que l'on ait donc  $AC=AB+BC$. On en déduit que $A'C'=A'B'+B'C'$ et par le cas d'égalité de l'inégalité triangulaire, on en déduit que $A'$, $B'$ et $C'$ sont alignés, avec $B'$ entre $A'$ et $C'$.
+
+Réciproquement, si $A$, $B$ et $C$ ne sont pas alignés, le triangle $ABC$ n'est pas plat et on a trois  inégalités strictes $AB<AC+CB$, $BC<BA+AC$ et $CA<CB+BA$. On en déduit les trois inégalités strictes $A'B'<A'C'+C'B'$, $B'C'<B'A'+A'C'$ et $C'A'<C'B'+B'A'$. Ceci montre que $A'$, $B'$ et $C'$ ne sont pas alignés. 
+\end{proof}
+
+\begin{proposition}[Conservation des angles droits]
+Soit $f : \mathcal P\to \mathcal P$ une isométrie, $A$, $B$ et $C$ trois points distincts et $A'$, $B'$ et $C'$ leurs images par $f$. Si $ABC$ est rectangle en $A$, alors $A'B'C'$ est rectangle en $A'$.
+\end{proposition}
+\begin{proof}
+Une preuve élémentaire utilise le théorème de Pythagore, sans utiliser le langage du produit scalaire. Si $ABC$ est rectangle en $A$, on a par Pythagore $BC^2=AB^2+AC^2$. Comme $f$ est une isométrie, on en déduit $B'C'^2=A'B'^2+A'C'^2$ et par la réciproque de Pythagore, $A'B'C'$ est rectangle en $A'$.
+\end{proof}
+
+\begin{proposition}
+L'image d'une droite par une isométrie est une droite.
+\end{proposition}
+\begin{proof}
+Exercice : on a déjà montré que l'image d'une droite est incluse dans une droite, par la propriété d'alignement. Il reste à justifier que l'image est la droite toute entière. C'est laissé en exercice.
+\end{proof}
+
+\begin{proposition}
+Soit $f : \mathcal P\to \mathcal P$ une isométrie.
+\begin{enumerate}
+\item Si deux droites sont parallèles et distinctes\footnote{Par convention, une droite est toujours parallèle à elle-même, pour que le parallélisme soit une \emph{relation d'équivalence}.}, leurs images par $f$ sont deux droites parallèles et distinctes.
+\item Si deux droites sont orthogonales, leurs images par $f$ sont deux droites orthogonales.
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+\begin{enumerate}
+\item Soient $\mathcal D$ et $\mathcal D'$ deux droites distinctes parallèles. Elles sont donc disjointes. Comme l'isométrie $f$ est injective, les images de deux parties disjointes quelconques sont disjointes. Par la proposition précédente, ces images sont dans le cas présent deux droites, qui sont donc disjointes et donc parallèles (et distinctes).
+\item On applique les propositions précédentes : les images des deux droites sont deux droites, et comme l'image d'un triangle rectangle est rectangle on en déduit le résultat.
+\end{enumerate}
+\end{proof}
+
+\begin{mdframed}
+Les résultats généraux que l'on passe ici sous silence sont  : la conservation du produit scalaire et donc des angles géométriques, le caractère affine, la notion d'isométrie directe et indirecte, l'étude des points fixes, et la classification des isométries. Rendez-vous en L2 !
+\end{mdframed}
+
+
+
+
+
+
+
+
+
+
+\section{Quelques isométries classiques : translations, rotations, symétries}
+
+\begin{definition}
+Soit $f : \mathcal P\to \mathcal P$. On dit que $f$ est une translation s'il existe $\overrightarrow{u} \in \overrightarrow{\mathcal P}$ tel que:
+\[ \forall M \in\mathcal P, \overrightarrow{Mf(M)} = \overrightarrow u\]
+\end{definition}
+
+\begin{remarque}
+Si $\overrightarrow u=\overrightarrow 0$, l'application est l'identité. \textbf{L'identité est un cas particulier de translation.}
+\end{remarque}
+
+
+\begin{definition}
+Soit $f : \mathcal P\to \mathcal P$. On dit que $f$ est une rotation s'il existe $\Omega\in\mathcal P$ et $\theta\in\R$ tels que:
+\[ 
+\forall M\in\mathcal P, 
+\begin{cases}
+\Omega M = \Omega f(M)\\
+(\widehat{\overrightarrow{\Omega M},\overrightarrow{\Omega f(M)}})\equiv \theta \mod 2\pi
+\end{cases}
+\]
+\end{definition}
+
+%On admet que le point $\Omega$ est unique sauf si $\theta\equiv 0 \mod 2\pi$, et on l'appelle le centre de la rotation. Le réel $\theta$ n'est pas unique, mais il est unique modulo $2\pi$, on l'appelle (lui ou tout représentant de sa classe de congruence) l'angle de la rotation.
+
+\begin{remarque}
+Si $\theta\equiv 0 \mod 2\pi$, l'application est l'identité. \textbf{L'identité est un cas particulier de rotation.}
+\end{remarque}
+
+\begin{definition}
+Soit $f : \mathcal P\to \mathcal P$. On dit que $f$ est une symétrie centrale s'il existe $\Omega\in\mathcal P$ tel que
+\[ \forall M\in\mathcal P, \overrightarrow{\Omega f(M)}=-\overrightarrow{\Omega M}\]
+\end{definition}
+
+\begin{remarque}
+Une symétrie centrale n'est rien d'autre qu'une rotation d'angle $\pi$.
+\end{remarque}
+
+\begin{definition}
+Soit $f : \mathcal P\to \mathcal P$. On dit que $f$ est une symétrie axiale s'il existe une droite $\Delta$ telle que
+\[ \forall M\in\mathcal P, \Delta \text{ est la médiatrice du segment } [Mf(M)]\]
+\end{definition}
+
+\begin{remarque}
+L'identité est à la fois une translation, une rotation et une symétrie centrale. On dit que c'est une translation triviale, une rotation triviale, ou une symétrie triviale.
+\end{remarque}
+
+
+%\begin{definition}
+%Soit $f : \mathcal P\to \mathcal P$. On dit que $f$ est une symétrie glissée si c'est la composée d'une symétrie axiale d'axe $\Delta$, suivie d'une translation d'un vecteur qui dirige $\Delta$.
+%\end{definition}
+
+L'unicité des points, vecteurs, angles, droites qui apparaissent dans ces définitions n'est pas claire : par exemple, rien n'indique dans la définition d'une translation sur le vecteur $\vec u$ est unique ou pas, si une rotation peut avoir plusieurs centres etc. Les définitions demandent juste l'existence de certains objets.
+
+Dans la majorité des cas, ces paramètres qui apparaissent dans les définitions sont uniques lorsqu'ils existent, mais pas toujours. Par exemple, le réel $\theta$ qui apparaît dans la définition d'une rotation n'est jamais unique, il n'est unique que modulo $2\pi$. Plus délicat : le centre n'est pas unique car il y a une exception : l'identité, qui est une rotation d'angle nul par rapport à n'importe quel \og centre\fg. 
+
+Pour étudier plus simplement la question de l'unicité de ces \og éléments caractéristiques\fg, il est pratique de passer en coordonnée complexe, c'est ce qui est fait dans le paragraphe suivant.
+
+\section{Écriture des isométries directes usuelles en coordonnées complexe}
+
+Le plan euclidien $\mathcal P$ est muni d'un repère orthonormé fixe d'une fois pour toutes. Les coordonnées cartésiennes, et les affixes, sont pris relativement à ce repère.
+
+
+Si $f  : \mathcal P\to \mathcal P$ est une application, on peut, grâce au repère fixé,  associer à $f$ une unique fonction
+\[ \tilde f : \C\to \C\]
+qui correspond à $f$ : c'est l'écriture de $f$ en coordonnée complexe. Cette fonction vérifie la relation
+\[ \Aff  f(P) = \tilde f(\Aff P)\]
+Autrement dit, l'affixe de $f(M)$ est obtenu en prenant l'affixe de M, puis en appliquant la fonction $\tilde f$.
+
+%À vrai dire, $\Aff(f)$ serait une meilleure notation que $\tilde f$ mais elle alourdirait un peu le texte.
+Dans plusieurs ouvrages on note simplement $f$ au lieu de $\tilde f$ : c'est un peu gênant car le symbole $f$ désigne alors deux choses : l'application $\mathcal P\to \mathcal P$ et aussi l'application associée $\C\to\C$, mais en pratique cela reste souvent compréhensible. Dans ce cours, on essaiera dans la mesure du possible de séparer le rôle de $f$ et de $\tilde f$ et il est demandé d'en faire autant lors des évaluations.
+
+
+
+Commençons par transposer au cadre des applications complexes les définitions données plus haut.
+
+
+\begin{proposition}
+Soit $f : \mathcal P\to \mathcal P$. 
+\begin{enumerate}
+\item C'est une isométrie si et seulement si :
+\[ \forall (z,w)\in\C^2, \abs{z-w} = \abs{\tilde f(z)-\tilde f(w)}.\]
+\item C'est une translation si et seulement si :
+\[ \exists b\in\C, \forall z\in\C, \tilde f(z)-z=b.\]
+\item C'est une rotation si et seulement si :
+\[ \exists \omega \in\C, \exists \theta\in\R, \forall z\in\C, \tilde f(z)-\omega = e^{i\theta}(z-\omega).\]
+\item C'est une symétrie centrale si et seulement si :
+\[ \exists \omega\in\C, \forall z\in\C, \tilde f(z)-\omega=\omega-z.\]
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+C'est une simple traduction des définitions, en utilisant l'interprétation géométrique du module et de l'argument.
+\end{proof}
+
+\begin{attention}
+Attention à l'ordre des quantificateurs, qui est crucial.
+\end{attention}
+
+
+
+
+%On donnera plus bas les écritures en coordonnée complexe des symétries axiales et des symétries glissées.
+
+\section{Unicité des éléments caractéristiques des translations et rotations}
+
+\begin{proposition}
+Soit $\phi : \C\to \C$ une translation. Il existe un unique complexe $b$ tel que 
+\[ \forall z\in \C, \phi(z)=z+b\]
+On l'appelle (l'affixe du) vecteur de translation de $\phi$.
+\end{proposition}
+\begin{proof}
+Soient $b$ et $b'$ deux complexes tels que $\forall z\in\C, z+b=z+b'$. En prenant $z=0$ on obtient $b=b'$.
+\end{proof}
+
+\begin{proposition}
+Soit $\rho : \C\to\C$ une rotation. Si $\rho$ n'est pas l'identité, il existe  un unique $\omega\in\C$ et un réel $\theta$ unique modulo $2\pi$, tels que 
+\[ \forall z\in\C, \rho(z)=e^{i\theta}(z-\omega)+\omega.\]
+On les appelle le centre et l'angle de la rotation.
+
+Si $\rho$ est l'identité, le réel $\theta$ est également unique modulo $2\pi$ : on a alors $\theta\equiv 0 \mod 2\pi$. Par contre, dans ce cas, le point $\omega$ n'est plus unique : tout $\omega\in\C$ convient. On dit que l'identité est une rotation d'angle nul, par contre elle n'a pas de centre (ou plutôt tout point peut être considéré comme son centre).
+\end{proposition}
+\begin{proof}
+Soient $\theta$, $\theta'$, $\omega$ et $\omega'$ tels que 
+
+\[ \forall z\in\C, e^{i\theta}(z-\omega)+\omega = e^{i\theta'}(z-\omega')+\omega'.\]
+En prenant $z=\omega$, on obtient $\omega-\omega'=e^{i\theta'}(\omega-\omega')$, c'est-à-dire $(\omega-\omega')(e^{i\theta'}-1)=0$. Ceci est équivalent à $\theta'\equiv 0\mod 2\pi$ ou $\omega=\omega'$.
+\begin{enumerate}
+\item Si $\theta'\equiv 0\mod 2\pi$, alors $\phi$ est l'identité. On a alors également $\theta\equiv 0 \mod 2\pi$, et tout complexe $\omega$ satisfait la définition.
+\item Sinon, alors $\omega=\omega'$, dans ce cas on obtient $e^{i\theta}=e^{i\theta'}$ c'est-à-dire $\theta\equiv \theta'\mod 2\pi$.
+\end{enumerate}
+\end{proof}
+
+\begin{definition}
+Les éléments caractéristiques d'une rotation ou d'une translation sont :
+\begin{enumerate}
+\item Pour la translation, son vecteur.
+\item Pour la rotation, son centre et son angle si elle est non triviale, son angle (nul) si elle est triviale.
+\end{enumerate}
+\end{definition}
+
+
+\section{Points fixes des isométries classiques}
+
+On rappelle (ou pas) la définition très générale suivante.
+
+\begin{definition}[Point fixe]
+Soit $E$ un ensemble, et $f : E\to E$ une application de $E$ dans lui-même. Soit $x\in E$. On dit que $x$ est un point fixe de $f$, ou que $x$ est fixe sous $f$, si $f(x)=x$.
+\end{definition}
+
+\begin{exemples}
+\begin{enumerate}
+\item L'identité d'un ensemble $E$, notée $\Id_E$, est par définition l'application de $E$ dans $E$ qui fixe tous les points.
+\item Les points fixes de l'application $f : \R\to \R, x\mapsto 3x+5$ sont les réels $x$ vérifiant $f(x)=x$, autrement dit $3x+5=x$. Il y en a uniquement un, à savoir $x=-5/2$.
+\item Une application n'a pas forcément de point fixe : l'application $g : \R\to \R, x\mapsto x+3$ n'a aucun point fixe.
+\item L'application $h : \R\to \R, x\mapsto x^2$ possède deux points fixes $0$ et $1$.
+\end{enumerate}
+\end{exemples}
+Ces exemples traitent le cas d'applications de $\R$ dans $\R$ mais ici, nous sommes plutôt intéressés par des applications de $\C$ dans $\C$, ou, de façon presque équivalente, de $\mathcal P$ dans $\mathcal P$.
+
+\begin{proposition}
+Soit $f$ une translation. Si elle n'est pas triviale (c'est-à-dire si elle n'est pas l'identité), elle n'admet aucun point fixe.
+\end{proposition}
+\begin{proof}
+Soit $b\in\C$ tel que la translation soit représentée par $\tilde f : z\mapsto z+b$. Soit $\alpha\in\C$ un point fixe. Alors par définition $\alpha=\alpha+b$ et donc $b=0$, et donc $f$ est l'identité.
+\end{proof}
+
+\begin{proposition}
+Soit $f$ une rotation. Si elle n'est pas triviale (autrement dit si elle n'est pas l'identité), alors elle admet un unique point fixe, son centre.
+\end{proposition}
+
+\begin{proof}
+Soit $\omega\in\C$ et $\theta\in\R$ tels que la rotation soit représentée par $\tilde f : z\mapsto e^{i\theta}(z-\omega)+\omega$. Si la rotation est non triviale, alors $e^{i\theta}\neq 1$. Soit $\alpha\in\C$ Alors:
+\begin{align*}
+f(\alpha)=\alpha
+&\iff e^{i\theta}(\alpha-\omega)+\omega=\alpha\\
+&\iff \alpha(e^{i\theta}-1)=e^{i\theta}\omega-\omega\\
+&\iff \alpha = \omega.
+\end{align*}
+(La division par $e^{i\theta}-1$ est licite d'après la remarque plus haut.)
+\end{proof}
+
+\begin{exercice}
+On admet que la transformation $f:\mathcal P\to \mathcal P$ représentée par $\tilde f :\C\to\C,  z\mapsto iz+2+4i$ est une rotation. Montrer que son centre a pour affixe $\omega=-1+3i$.
+\end{exercice}
+\begin{red}
+Il suffit de vérifier que $\tilde f(\omega)=\omega$.
+\end{red}
+
+\begin{mdframed}
+La proposition qui suit est très utile : elle permet de montrer facilement qu'une transformation est une rotation sans avoir à en exhiber le centre.
+\end{mdframed}
+
+\begin{proposition}
+Soit $a\in\C$ de module un et différent de $1$ (c'est-à-dire $a\in\U\setminus \{1\}$) et $b\in\C$. L'application $f : \mathcal P\to \mathcal P$ représentée par $\tilde f :\C\to \C,  z\mapsto az+b$ est une rotation d'angle $\arg(a)$.
+\end{proposition}
+\begin{proof}
+On constate qu'une telle application a un unique point fixe : 
+\[ z=\tilde f(z) \iff z=az+b \iff z=\frac{b}{1-a}\]
+Notons $\omega=\frac{b}{1-a}$ et montrons que $f$ est une rotation dont le centre est d'affixe $\omega$ et dont l'angle est un argument de $a$. On a, pour tout $z$:
+\[ a(z-\omega)+\omega=a\left(z-\frac{b}{1-a}\right)+\frac{b}{1-a}=az-\frac{ab}{1-a}+\frac{b}{1-a} = az+b = \tilde f(z).\]
+\end{proof}
+
+
+
+
+\begin{exercice}
+La transformation $f:\mathcal P\to \mathcal P$ représentée par $\tilde f :\C\to\C,  z\mapsto -iz+3+i$ est une rotation. Déterminer son centre.
+\end{exercice}
+
+\section{Composition des isométries classiques}
+
+\begin{proposition}[Composition et réciproques des translations]
+\begin{enumerate}
+\item Si $f$ et $g$ sont des translations, les deux composées $f\circ g$ et $g\circ f$ coïncident et cette application est une translation.
+\item Une translation admet une application réciproque et sa réciproque est une translation.
+\end{enumerate}
+On résume ces propriétés en disant que les translations forment un groupe pour la composition, et que ce groupe est \emph{commutatif} (on dit aussi : \emph{abélien}).
+\end{proposition}
+\begin{proof}
+On peut donner des preuves géométriques de cette propriété, mais utilisons les complexes. 
+\begin{enumerate}
+\item Soient $f$ et $g$ deux translations. Alors il existe des complexes $b$ et $b'$ tels que
+\[ \forall z\in\C, \tilde f (z) = z+b \text{ et } \forall z\in\C, \tilde g(z)=z+b'\]
+La composée $f \circ g$ est représentée par :
+\[ \tilde f \circ \tilde g  : \begin{cases}
+\C\to\C\\
+z\mapsto \tilde f(\tilde g(z)) = \tilde f(z+b') = (z+b')+b = z+(b'+b)
+\end{cases}\]
+Un calcul semblable montre que la composée $g\circ f$ est représentée par  $z\mapsto z+b+b'$, ce qui montre que $f\circ g=g\circ f$. Cette composée est la translation dirigée par le vecteur d'affixe $b'+b$. 
+\item Du point précédent on déduit que $f\circ g=\Id$ si et seulement si $b'=-b$. Ceci montre que toute translation admet une réciproque, à savoir la translation de vecteur opposé.
+\end{enumerate}
+\end{proof}
+
+\begin{proposition}[Composition et réciproque des rotations de même centre]
+Soit $\Omega\in\mathcal P$. \textbf{(Attention, ce point est fixé d'une fois pour toutes dans toute cette proposition.)}
+\begin{enumerate}
+\item Soient $f$ et $g$ deux rotations de centre $\Omega$. Alors la composée $f\circ g$ est égale à $g \circ f$. C'est une rotation de centre $\Omega$, et son angle est la somme des angles de $f$ et de $g$ (modulo $2\pi$).
+\item Soit $f$ une rotation de centre $\Omega$. Alors $f$ admet une application réciproque, qui est aussi une rotation de centre $\Omega$, et d'angle opposé (modulo $2\pi$).
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+\begin{enumerate}
+\item Écrivons les applications en coordonnée complexe :
+\[
+\tilde f : z\mapsto e^{i\theta}(z-\omega)+\omega,\quad
+\tilde g : z\mapsto e^{i\theta'}(z-\omega)+\omega
+\]
+Alors on peut calculer les deux composées:
+\begin{align*}
+\tilde f\circ \tilde g(z)
+&=e^{i\theta}(e^{i\theta'}(z-\omega)+\omega-\omega)+\omega\\
+&=e^{i(\theta+\theta')}(z-\omega)+\omega
+\end{align*}
+\item Du point précédent, on voit que $f\circ g=\Id_{\mathcal P}$ si et seulement si $e^{i(\theta+\theta')}=1$, autrement dit si et seulement si $\theta'\equiv -\theta\mod 2\pi$.
+\end{enumerate}
+\end{proof}
+
+
+
+\begin{attention}
+La composée de deux rotations n'ayant \textbf{pas le même centre} n'est \textbf{pas une rotation en général!} C'est le cas fréquemment, mais pas toujours.
+\end{attention}
+
+\begin{proof}
+Considérons la rotation $f$ d'angle $\pi/2$ de centre l'origine, et la rotation $g$ d'angle $-\pi/2$ dont le centre est le point d'affixe $1$. Une figure suffit à se convaincre que la composée n'est pas une rotation mais une translation. Si ce n'est pas clair, on peut de toute façon le démontrer par le calcul : les rotations $f$ et $g$ sont représentées par 
+\[
+\tilde f : \begin{cases}\C\to\C\\z\mapsto e^{i\theta}(z-\omega)+\omega\end{cases}
+\text{ et }
+\tilde g : \begin{cases}\C\to\C\\z\mapsto e^{i\theta'}(z-\omega)+\omega\end{cases}
+\]
+La composée $f\circ g$ est représentée en coordonnée complexe par
+\[
+\tilde f\circ \tilde g : \begin{cases}\C \to \C\\ z\mapsto \tilde f (-iz+1+i) = i(-iz+1+i) = z-1+i\end{cases} 
+\]
+Ce n'est pas une rotation... en fait il s'agit dans ce cas d'une translation !
+\end{proof}
+
+Il existe néanmoins certains cas où la composée de deux rotations est une rotation, par exemple si elles ont le même centre, mais pas uniquement. Le résultat général est le suivant.
+
+\begin{proposition}
+Soient $f$ et $g$ deux rotations. Leur composée est:
+\begin{enumerate}
+\item Une translation si l'angle de $f$ est opposé à celui de $g$ modulo $2\pi$.
+\item Une rotation dans tous les autres cas.
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+On peut écrire $f$ et $g$ en coordonnées complexes : 
+\[ \tilde f : \begin{cases}\C\to\C\\z\mapsto e^{i\theta}(z-\omega)+\omega\end{cases}
+\text{ et }
+\tilde g : \begin{cases}\C\to\C\\z\mapsto e^{i\theta'}(z-\omega')+\omega'\end{cases}
+\]
+On a alors:
+\begin{align*}
+\tilde f\circ \tilde g(z)
+&= e^{i\theta}(\tilde g(z)-\omega)+\omega\\
+&= e^{i\theta}((e^{i\theta'}(z-\omega')+\omega')-\omega)+\omega\\
+&= e^{i(\theta+\theta')}(z-\omega')+e^{i\theta}(\omega'-\omega)+\omega.
+\end{align*}
+\begin{enumerate}
+\item Si $e^{i\theta'}=e^{-i\theta}$, on voit la translation 
+\[
+\tilde f\circ \tilde g(z)=z+(\omega'-\omega)(e^{i\theta}-1)
+\]
+\item Sinon, on voit que la composée est une rotation d'angle $\theta+\theta'$. Le centre de cette rotation peut être déterminé, c'est laissé en exercice, mais on reviendra sur les points fixes des isométries et des similitudes directes dans la suite.
+\end{enumerate}
+\end{proof}
+
+Enfin, la proposition suivante traite le cas des compositions \og mixtes \fg{}.
+
+\begin{proposition}
+La composée (dans un ordre quelconque) d'une translation et d'une rotation est toujours une translation ou une rotation.
+\end{proposition}
+\begin{proof}
+Soit $f$ une translation et $g$ une rotation non triviales. Écrivons-les en coordonnées complexe : il existe $b\in\C$, $\omega\in\C$ et $\theta \in\R$ tels que
+\[ \forall z\in\C, \tilde f(z)=z+b \text{ et } \forall z\in\C, \tilde g(z)=e^{i\theta}(z-\omega)+\omega\]
+Écrivons maintenant ses composées : si $z\in\C$, on a 
+\[ \tilde f\circ \tilde g(z) : (e^{i\theta}(z-\omega)+\omega)+b=e^{i\theta}z+\omega(1-e^{i\theta})\]
+C'est une rotation d'angle $\theta$.
+
+On procède de même pour l'autre composée (attention, le résultat n'est pas le même : c'est toujours une rotation d'angle $\theta$, mais potentiellement avec un centre différent).
+\end{proof}
+
+

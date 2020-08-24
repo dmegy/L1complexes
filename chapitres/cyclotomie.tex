@@ -1,0 +1,302 @@
+\subsection{Racines $n$-èmes de l'unité, avec $n\in \N^*$}
+
+\begin{definition}
+Soit $n\in\N^*$.
+\begin{enumerate}
+\item Si $z\in \C$, on dit que $z$ est une \emph{racine $n$-ème de l'unité} si $z^n=1$.
+\item On note $\U_n$ l' ensemble des racines $n$-ème de l'unité:
+\[ \U_n=\ensemble{z\in\C}{z^n=1}.\]
+\end{enumerate}
+\end{definition}
+
+Autrement dit, si $z\in \C$ et $n\in\N^*$, les assertions \og $z\in\U_n$\fg{} et \og$z^n=1$\fg{} sont équivalentes, par définition de $\U_n$. 
+
+\begin{attention}
+Quand on écrit \og $\U_n$\fg{} ou que l'on parle de racines $n$-èmes de l'unité, il faut avoir déclaré le symbole $n$ auparavant.
+\end{attention}
+
+
+\begin{exemples}
+Lorsque $n\in \N^*$ est petit, les ensembles $\U_n$ sont faciles à déterminer :
+\begin{enumerate}
+\item On a $\U_1=\ensemble{z\in\C}{z=1}=\{1\}$.
+\item On a $\U_2=\ensemble{z\in\C}{z^2=1}=\{-1,1\}$.
+\item Si $z\in\C$, alors on a la suite d'équivalences
+\begin{align*}
+z\in\U_3 &\iff z^3=1 \\
+&\iff z^3-1=0 \\
+&\iff (z-1)(z^2+z+1)=0 \\
+&\iff (z-1)(z-j)(z-\bar j)=0\\
+&\iff z\in \set{1,j,\bar j}
+\end{align*}
+On en déduit que $\U_3 = \set{1,j,\bar j}$.
+\item De même, si $z\in\C$, alors on a la suite d'équivalences
+\begin{align*}
+z\in\U_4 &\iff z^4=1 \\
+&\iff z^4-1=0 \\
+&\iff (z^2-1)(z^2+1)=0 \\
+&\iff (z-1)(z-1)(z-i)(z+i)=0\\
+&\iff z\in \set{1,i,-1,-i}
+\end{align*}
+On en déduit que $\U_4 = \set{1,i,-1,-i}$.
+\end{enumerate}
+\end{exemples}
+
+\begin{remarque}
+Lorsque $n$ décrit $\N^*$, les différents ensembles $\U_n$ ne sont pas disjoints, ils peuvent avoir certains éléments en commun. Noter par exemple que $1$ appartient à tous les $\U_n$, que $-1$ appartient à $\U_2$ et aussi à $\U_4$ (mais pas à $\U_3$), etc.% cas général en exercice.
+\end{remarque}
+
+\begin{proposition}
+Soient $n$ et $p$ dans $\in\N^*$. Si $p\in\N^*$ est un multiple de $n$, alors $\U_n\subseteq \U_p$.
+\end{proposition}
+\begin{proof}
+Soit $z\in \U_n$. Montrons que $z\in \U_p$.
+Par définition du fait d'être multiple, il existe $k\in \N^*$ tel que $p=kn$. Alors, on peut écrire
+\[ z^p=z^{kn}=z^{nk}=(z^n)^k=1^k=1.\]
+Donc $z\in \U_p$.
+\end{proof}
+
+(Une bonne question, que l'on peut commencer à se poser dès maintenant, est de savoir si la réciproque est vraie. Réponse plus tard.)
+
+
+
+\subsection{Racines de l'unité}
+
+Toutes les définitions précédentes ne concernent que les racines $n$-èmes de l'unité avec un $n$ fixé (c'est-à-dire préalablement déclaré). Il est cependant utile de  pouvoir travailler avec des nombres complexes qui sont \og racine $n$-ème de l'unité  pour un certain $n$\fg{}, mais sans avoir à préciser de tel entier $n$, du moment que l'on sait qu'il en existe bien un. Pour cela, on introduit la définition suivante :
+
+\begin{definition}
+\begin{enumerate}
+\item Soit $z\in \C$. On dit que $z$ est une \emph{racine de l'unité} s'il existe $n\in \N^*$ tel que $z$ soit une racine $n$-ème de l'unité. 
+\item On note\footnote{Cette notation n'est pas tout à fait standard, mais c'est celle qui est la plus compatible avec la notation $\U_n$, qui elle-même sera progressivement abandonnée au profit de $\mu_n(\C)$ à partir de l'année de L3.} $\U_\infty$ l'ensemble des racines de l'unité. Autrement dit, avec plusieurs reformulations équivalentes :
+\begin{align*}
+\U_\infty &= \left\{z\in \C \:\middle\vert\: \text{$z$ est racine de l'unité}\right\}\\
+&= \left\{z\in \C\:\middle\vert\:\exists n\in \N^*, z^n=1\right\}\\
+&= \left\{z\in \C\:\middle\vert\:\exists n\in \N^*, z\in \U_n\right\}\\
+&= \bigcup_{n\in \N^*} \U_n
+\end{align*}
+\end{enumerate}
+\end{definition}
+
+\begin{attention}
+L'ensemble $\U_\infty$ est beaucoup plus complexe que les ensembles $\U_n$, lorsque $n\in \N^*$. Par exemple, on verra plus tard que chaque $\U_n$ est un ensemble fini, alors que $\U_\infty$ est un ensemble infini. Il est conseillé d'éviter au maximum de faire appel à $\U_\infty$ et d'essayer de n'utiliser que les ensembles $\U_n$ lorsque c'est possible. (Cela dit, on démontre tout de même ici un certain nombre de propriétés élémentaires de l'ensemble $\U_\infty$.)
+\end{attention}
+
+
+
+Être racine de l'unité, c'est donc être racine $n$-ème de l'unité \og pour un certain $n$\fg. Pour démontrer qu'un nombre complexe est racine de l'unité, il suffit donc de montrer qu'il existe $n\in\N^*$ tel que $z$ est racine $n$-ème de l'unité. En général, on trouve un tel $n$ explicitement, comme dans les exemples suivants.
+
+\begin{exemple}
+\begin{enumerate}
+\item Le nombre complexe $i$ est une racine de l'unité. En effet, on a $i^4=1$, donc $i$ est racine quatrième de l'unité.
+\item Le nombre complexe $Z=\frac{\sqrt 3+i}{2}$ est une racine de l'unité. En effet, on a $Z=e^{i\pi/6}$, donc $Z^{12}=1$. On en déduit que $Z$ est racine douzième de l'unité.
+\end{enumerate}
+\end{exemple}
+
+\begin{remarque}
+Dire que $z$ est racine de l'unité c'est dire qu'il est racine de l'unité \og pour un certain $n\in\N^*$\fg, mais ce $n$ n'est pas unique : par exemple, $i$ est une racine quatrième de l'unité, mais c'est aussi une racine huitième de l'unité, pusque l'on a bien $i^8=1$. Si $Z$ est une racine de l'unité, déterminer le \og plus petit $n$\fg{} pour lequel $Z$ est racine $n$-ème est un problème intéressant sur lequel on reviendra.
+\end{remarque}
+
+\subsection{Premiers résultats de structure}
+
+Nous avons déjà décrit les ensembles $\U_n$ pour $n\in \llbracket 1,4\rrbracket$. La détermination des ensembles $\U_n$ pour $n \geq 5$ est moins immédiate. Auparavant, on peut déjà démontrer une certaine quantité de résultats sur $\U_n$ en exploitant simplement sa définition.
+
+\begin{proposition}
+Soit $n\in\N^*$. Alors $\U_n \subseteq \U$. Autrement dit, toute racine $n$-ème de l'unité est de module un (et en particulier non nulle).
+\end{proposition}
+\begin{proof}
+Soit $z\in\U_n$. On a donc $z^n=1$. En prenant le module de cette équation, on obtient en particulier $\abs{z^n}=\abs{1}$ c'est-à-dire $\abs{z}^n=1$. Comme $\abs{z}$ est un réel positif, ceci implique que $\abs{z}=1$.
+\end{proof}
+
+\begin{corollaire}
+On a l'inclusion $\U_\infty\subseteq\U$.
+\end{corollaire}
+\begin{proof}
+Soit $z\in \U_\infty$. Montrons que $z\in\U$. Par définition, il existe $n\in\N^*$ tel que $z\in\U_n$. Comme d'après la proposition précédente, on a $\U_n\subseteq \U$, on en déduit $z\in\U$. 
+\end{proof}
+
+\begin{proposition}[Stabilité par produit et inverse]
+Soit $n\in\N^*$. Alors:
+\begin{enumerate}
+\item L'ensemble $\U_n$ est stable par produit, autrement dit si deux onmbres complexes sont dans $\U_n$, alors leur produit aussi. En langage mathématique : $\forall z, w\in\U_n, zw\in\U_n$.
+\item L'ensemble $U_n$ est stable par inverse, autrement dit si un nombre complexe est dans $\U_n$, (il est non nul et) son inverse appartient également à $\U_n$. En langage mathématique : $\forall z\in\U_n, \frac{1}{z} \in\U_n$. (Remarquer que l'on a déjà montré qu'une racine $n$-ème de l'unité n'est jamais nulle.)
+\end{enumerate}
+\end{proposition}
+\begin{remarque}
+Dans les mois qui viennent, cette proposition sera résumée par la phrase \og Si $n\in\N^*$, alors $\U_n$ est un groupe multiplicatif.\fg
+\end{remarque}
+
+\begin{proof}
+\begin{enumerate}
+\item Soient $z, w\in\U_n$. On a donc $z^n=1$ et $w^n=1$. On en déduit que 
+\[ (zw)^n=z^nw^n=1.\]
+Donc $zw\in\U_n$.
+\item Soit $z\in\U_n$. On a donc $z^n=1$. Rappelons encore une fois que ceci implique que $z$ est non nul. On peut donc former son inverse $a/z$, et cet inverse vérifie:
+\[ \left(\frac{1}{z}\right)^n = \frac{1}{z^n} = \frac{1}{1} = 1.\]
+Donc $\frac{1}{z} \in\U_n$.
+\end{enumerate}
+\end{proof}
+
+Les trois propriétés se résument en disant que \og la multiplication munit $\U_n$ d'une structure de groupe\footnote{Il existe une définition générale de \emph{groupe} : il s'agit d'un ensemble muni d'une loi de composition, qui vérifie certaines propriétés. Les groupe des racines $n$-èmes de l'unité est un des premiers exemples de groupes que l'on croise.}\fg, ou bien simplement que \og $\U_n$ est un groupe multiplicatif\fg. (En toute rigueur la première propriété devrait être remplacée par quelque chose d'autre, mais ici ce n'est pas très important.)
+
+Dans la suite, on écrira donc souvent \og groupe des racines $n$-èmes de l'unité\fg{} au lieu d'écrire \og ensemble des racines $n$-èmes de l'unité\fg.
+
+Le même type de propriété est vérifié pour l'ensemble des racines de l'unité $\U_\infty$ : 
+
+\begin{proposition}[Stabilité par produit et inverse]
+Les propriétés suivantes sont vérifiées :
+\begin{enumerate}
+\item (Stabilité par produit) $\forall z, w\in\U_\infty, zw\in\U_\infty$;
+\item (Stabilité par inverse) $\forall z\in\U_\infty, \frac{1}{z} \in\U_\infty$. (Remarquer que l'on a déjà montré qu'une racine de l'unité n'est jamais nulle.)
+\end{enumerate}
+\end{proposition}
+\begin{remarque}
+Dans les mois qui viennent, cette proposition sera résumée par la phrase \og $\U_\infty$ est un groupe multiplicatif.\fg
+\end{remarque}
+
+\begin{proof}
+\begin{enumerate}
+\item Soient $z, w\in\U_\infty$. Par définition, il existe $n\in\N^*$ tel que $z^n=1$, et il existe $p\in \N^*$ tel que $w^p=1$. Posons $q=np$. On a 
+\[ z^q=z^{np}=(z^n)^p=1^p=1,\]
+donc $z\in \U_q$. D'autre part, on a 
+\[ w^q = w^{np} = w^{pn} = (w^p)^n = 1^n=1,\]
+donc $w\in \U_q$. D'après la proposition précédente, $\U_q$ est stable par produit, donc $zw \in \U_q$. Et donc $zw\in\U_\infty$.
+\item Ce point est plus simple que le précédent. Soit $z\in\U_\infty$. Soit $n\in\N^*$ tel que $z^n=1$. D'après la proposition précédente, $\U_n$ est stable par inverse et donc $\frac{1}{z} \in \U_n$. Donc $\frac{1}{z} \in\U_\infty$.
+\end{enumerate}
+\end{proof}
+
+\begin{remarque}
+Dans la preuve de la stabilité par produit, il est important de comprendre que $n$ et $p$ n'ont aucune raison d'être égaux, en général. Le point important de la preuve est de trouver un entier $q$ tel que $zw \in \U_q$, et pour cela, le plus simple est de trouver un entier $q$ tel que $z\in \U_q$ et $w\in \U_q$, puis d'utiliser la stabilité par produit. Le choix effectué ici (prendre $q=np$) est le plus simple, mais il y a plus \og efficace\fg : on aurait pu prendre $q=\ppcm(n,p)$, ce fournit un meilleur (plus petit) choix pour $q$. Prendre le produit au lieu du ppcm permet d'avoir une preuve un peu moins optimale, mais qui marche et qui évite de parler de ppcm.
+\end{remarque}
+
+\begin{remarque}
+Faisons \og tourner\fg{} la preuve de stabilité par produit pour le cas particulier $z=i$ et $w=j$. On cherche à montrer que $zw$ est racine de l'unité. On sait que $i$ est racine $n$-ème de l'unité avec $n=4$. De même, on sait que $j$ est racine $p$-ème de l'unité avec $p=3$. La preuve nous fait donc poser $q=np=12$. Les nombres complexes $i$ et $j$ sont tous deux racines $12$-èmes de l'unité, donc leur produit est également racine $12$-ème de l'unité. (Dans cet exemple, on ne voit pas la différence entre produit et ppcm, car $4$ et $3$ sont premiers entre eux.)
+\end{remarque}
+
+
+\begin{proposition}
+Soit $n\in\N^*$, et $a\in\U_n$. L'application $M_a : \begin{cases} \U_n\to \U_n,\\z\mapsto az\end{cases}$ est bien définie, et bijective.
+\end{proposition}
+\begin{proof}
+Cela découle de la proposition précédente : le fait que l'application soit bien définie, en particulier qu'elle soit bien à valeurs dans $\U_n$, est une conséquence de la stabilité par produit. Elle est bijective car elle possède ue application réciproque, à savoir $\begin{cases} \U_n\to \U_n,\\z\mapsto \frac{z}{a}\end{cases}$.
+\end{proof}
+
+Jusqu'à présent, on a montré une certaine quantité de résultats sur $\U_n$, mais on n'a pas encore montré qu'il contenait des éléments autres que $1$. Il est raisonnable de commencer à se poser cette question, puisque ce serait quand même dommage d'écrire un chapitre entier sur l'ensemble $\{1\}$. En fait, on déterminera un peu plus tard la totalité des éléments de $\U_n$. Pour l'instant, on peut faire les remarques suivantes:
+\begin{enumerate}
+\item Pour $n=1$, $2$, $3$ et $4$ on a déterminé $\U_n$ et vu que c'était un ensemble fini de cardinal $1$, $2$, $3$ et $4$. On peut donc se douter qu'en général, $\U_n$ est un ensemble fini de cardinal $n$, mais ceci n'est bien sûr pas une preuve.
+\item Si $n$ est pair, $(-1)^n=1$ et donc $-1 \in\U_n$, ce qui montre que dans ce cas, $\U_n$ est au minimum de cardinal $2$.
+\item Une conséquence de la proposition est que si $z\in\U_n$, alors pour tout $k\in\Z$, le nombre complexe $z^k$ appartient également à $\U_n$ : en effet, $\left(z^k\right)^n=\left(z^n\right)^k=1^k=1$. Attention, ceci ne montre pas que $\U_n$ est infini, puisque ces éléments ne sont pas tous distincts : par exemple, comme $z^n=1$, on a $z=z^{n+1}$, $z^2=z^{n+2}$ etc. Cette remarque permet donc, étant donné $z\in\U_n$, de trouver potentiellement $n$ éléments (dans le meilleur des cas) dans $\U_n$ (dont $1$). Dans le meilleur des cas, car tout dépend de $z$ : par exemple si $z=1$, rajouter ses puissances successives ne donne pas grand chose. Pour $\U_4$, si on considère les puissances de $z=-1$, on n'obtient que $-1, 1, -1, 1, \cdots$ et on ne récupère jamais $i$ et $-i$. Donc prendre les puissances d'un élément n'épuise pas forcément $\U_n$ : parfois oui, parfois non, et étudier quand est-ce que c'est le cas est une question intéressante qui sera traitée plus tard.
+\item On peut aussi remarquer que si $z\in\U_n$, alors $\overline z$ aussi puisque $\overline z^n=\overline{z^n}=1$. Mais cette remarque n'apporte rien de nouveau par rapport à la précédent puisque pour un nombre complexe de module un, $\overline z = \frac1z$.
+\item On peut enfin remarquer que si $n\geq 2$, l'ensemble $\U_n$ contient au moins $e^{2i\pi/n}$, puisque $\left(e^{2i\pi/n}\right)^n=e^{2i\pi}=1$. Et si $n\geq 2$, $e^{2i\pi/n}$ est bien différent de $1$. On peut ensuite considérer ses puissances successives. Cette piste est fructueuse et on la poursuivra un peu plus tard. 
+\end{enumerate}
+
+
+\begin{proposition}
+Soit $n\geq 2$ un entier. Alors la somme $S$ des racines $n$-èmes de l'unité est nulle, autrement dit:
+\[ S=\sum_{z\in \U_n}z = 0.\]
+\end{proposition}
+\begin{proof}
+Soit $a\in \U_n$, différent de $1$. On va montrer que $aS=S$, ce qui est équivalent à $(a-1)S=0$ puis à $S=0$ puisque $a\neq 1$. On procède ainsi :
+\[ aS=a\sum_{z\in \U_n}z = \sum_{z\in \U_n} az = \sum_{z\in \U_n} M_a(z),\]
+où $M_a$ est l'application $\begin{cases} \U_n\to \U_n,\\z\mapsto az\end{cases}$ introduite plus haut, de multiplication par $a$. On a montré qu'elle est bijective, et donc sommer les $M_a(z)$ lorsque $z$ décrit $\U_n$ revient à sommer simplement les $z$ lorsque $z$ décrit $\U_n$, mais dans un ordre différent, contrôlé par la bijection $M_a$. La somme est donc identique, c'est-à-dire $aS=S$, et donc $S=0$ comme expliqué plus haut.
+\end{proof}
+
+\begin{center}
+\begin{mdframed}
+Cette preuve est belle mais peut sembler difficile en première lecture (utilisation d'une bijection, de sommation indexée par un ensemble abstrait, théorème qui porte sur des éléments d'un ensemble dont on ignore encore presque tout). Dans la suite, on déterminera explicitement les éléments de $\U_n$ et on démontrera ce résultat d'une manière plus concrète. Mais il est important de lire et d'apprendre à apprécier des preuves abstraites, qui réussissent à démontrer des résultats avec très peu d'informations préalables. Les preuves abstraites sont également plus faciles à réutiliser et adapter dans d'autres contextes, ce qui fait gagner du temps.
+\end{mdframed}
+\end{center}
+
+%\begin{proposition}
+%Soit $n\in\N^*$ et $z\in \U_n$. Alors $\overline{z} \in\U_n$.
+%\end{proposition}
+%\begin{proof}
+%On a : 
+%\begin{align*}
+%\left(\overline{z}\right)^n &= \overline{z^n} \quad \text{(multiplicativité de la congaison)}\\
+%&=\overline{1}=1.
+%\end{align*}
+%Donc $\overline z \in\U_n$.
+%\end{proof}
+
+Enfin, avant de déterminer les éléments de $\U_n$ de manière explicite, sous forme exponentielle, on peut remarquer, si l'on connaît déjà quelques résultats sur les polynômes, que l'ensemble $\U_n$ est forcément fini, de cardinal $\leq n$. En effet,en reformulant la définition de $\U_n$, on voit que c'est par définition l'ensemble des racines complexes du polynôme $X^n-1$. Ce polynôme est de degré $n$, et un polynôme de degré $n$ possède au maximum $n$ racines distinctes.
+
+Par ailleurs, nous avons déjà remarqué que l'élément $e^{2ik\pi/n}$ appartient à $\U_n$, puisque $\left(e^{2i\pi/n}\right)^n=e^{2i\pi}=1$. Un raisonnement semblable montre que pour tout $k\in\Z$, le nombre complexe $e^{2ik\pi/n}$ appartient à $\U_n$. On peut se convaincre assez rapidement que ceci nous fournit $n$ éléments disctincts de $\U_n$. En utilisant l'argument sur le nombre de racines d'un polynôme, on sait qu'il ne peut y en avoir plus et donc il n'y a pas d'autres éléments dans $\U_n$.
+
+Cependant, comme le cours sur les polynômes n'est pas supposé connu à ce stade, nous donnerons par la suite une autre démonstration de ces résultats, plus concrète.
+
+\subsection{Forme exponentielle des racines $n$-èmes}
+
+
+\begin{proposition}
+Soit $n\in\N^*$. Alors on a
+\[ \U_n = \ensemble{e^{2ik\pi/n}}{k\in \llbracket 0,n-1\rrbracket}\]
+\end{proposition}
+\begin{proof}
+Soit $z\in\C^*$, et écrivons $z=re^{i\theta}$, avec $r\in\R_+^*$ son module et $\theta\in\R$ un de ses arguments. On a la suite d'équivalences
+\begin{align*}
+z^n=1 &\iff r^ne^{in\theta}=1\\
+&\iff \begin{cases}r^n=1\\n\theta \equiv 0\mod 2\pi\end{cases}
+&\iff \begin{cases}r=1\\\theta \equiv 0\mod \frac{2\pi}{n}\end{cases}
+\end{align*}
+Par définition de ce qu'est une congruence, on obtient donc :
+
+\[ \U_n = \ensemble{e^{2ik\pi/n}}{k\in \Z}\]
+\end{proof}
+%\begin{remarque}
+%Ceci signifie que si $z\in\C$, alors \og$z\in\U_n$\fg{} est équivalente à \og$\exists k\in \llbracket 0,n-1\rrbracket, z=e^{2ik\pi/n}$.\fg
+%\end{remarque}
+
+Cette écriture explicite permet de donner une nouvelle démonstration du résultat sur la somme des racines $n$-èmes.
+
+\begin{proposition}
+Soit $n$ un entier supérieur ou égal à deux. Alors la somme $S$ des racines $n$-èmes de l'unité est nulle, autrement dit:
+\[ S=\sum_{z\in \U_n}z = 0.\]
+Une autre façon, plus concrète d'écrire cette formule est:
+\[ S=\sum_{k=0}^{n-1}e^{2ik\pi/n} = 0\]
+\end{proposition}
+\begin{proof}
+On reconnaît une somme géométrique de raison $e^{2i\pi/n}$ qui est différente de $1$ puisque $n\geq 2$. Cette somme vaut donc
+\[ \frac{1-\left(e^{2i\pi/n}\right)^n}{1-e^{2i\pi/n}} = 0.\]
+\end{proof}
+
+\subsection{Interprétation géométrique}
+
+\begin{proposition}Soit $n\geq 2$ un entier. 
+Les éléments de $\U_n$ sont les affixes d'un polygone régulier à $n$ côtés, inscrit dans le cercle unité du plan.
+\end{proposition}
+
+(Un $2$-gone est juste un segment. Un $3$-gone régulier est un triangle équilateral, un $4$-gone régulier est un carré, etc.)
+
+
+\subsection{Compléments : générateurs et racines primitives}
+
+Dans toute cette section, $n$ désigne un entier naturel non nul.
+
+\begin{definition}
+Soit $a\in\C$. On dit que $a$ est un \emph{générateur} de $\U_n$ si
+\[ \U_n = \ensemble{a^n}{n\in\Z}\]
+\end{definition}
+
+Autrement dit, si $\U_n$ est égal à l'ensemble $\set{\cdots , a^{-2}, a^{-1}, a^0=1, a, a^2, a^3, \cdots}$. En particulier, $a$ doit forcément appartenir à $\U_n$ pour en être un générateur. Remarquer aussi que $1$ n'est jamais un générateur de $\U_n$, sauf si $n=1$.
+
+\begin{proposition}
+Le nombre complexe $e^{2i\pi/n}$ est un générateur de $\U_n$.
+\end{proposition}
+\begin{proof}
+Dire que $e^{2i\pi/n}$ est un générateur de $\U_n$, c'est dire que $\U_n=\ensemble{e^{2ik\pi/n}}{k\in \Z}$ et c'est ce que l'on a montré plus haut.
+\end{proof}
+
+\begin{exemples}
+$-1$ est un générateur de $\U_2$, $j$ est un générateur de $\U_3$, $i$ est un générateur de $\U_4$, $e^{2i\pi/5}$ est un générateur de $\U_5$ etc.
+\end{exemples}
+
+Évidemment, il peut tout-à-fait y avoir plus d'un générateur : 
+
+\begin{exercice}
+Montrer que les générateurs de $\U_3$ sont $j$ et $j^2$, et que les générateurs de $\U_4$ sont $i$ et $-1$ (mais pas $-1$). Combien y a-t-il de générateurs dans $\U_6$ ? Et dans $\U_{12}$ ? Comment généraliser ces résultats ?
+\end{exercice}
+
+\begin{definition}
+Les générateurs de $\U_n$ sont également appelés les racines $n$-èmes \emph{primitives} de l'unité.
+\end{definition}
+

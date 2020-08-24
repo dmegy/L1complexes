@@ -1,0 +1,48 @@
+\begin{definition}
+Déterminant de deux vecteurs, relativement à une base.
+\end{definition}
+
+\begin{proposition}
+[Écriture en coordonnée complexe]
+Soient $\vec u$ et $\vec v$ deux vecteurs du plan, d'affixes $z$ et $z'$ relativement à une base $\mathcal B$. Alors, leur déterminant (relativement à cette base) est
+\[ \det(\vec u, \vec v) = \Im(\overline z\cdot z')\]
+\end{proposition}
+\begin{proof}
+Soient $(x,y)=\Coord \vec u$ et $(x',y')=\Coord \vec v$. Alors
+\[ \Im(\overline z\cdot z') = \Im\left(xx'+yy'+i(xy'-yx')\right) = xy'-yx' = \det(\vec u, \vec v).\]
+\end{proof}
+
+\begin{definition}
+On dit que deux bases ont la même orientation si le déterminant de l'une dans l'autre est positif. SInon on dit qu'elles ont une orientation inverse.
+\end{definition}
+
+\begin{exemples}Soit $\mathcal B = (u,v)$ la base canonique de $\R^2$.
+\begin{enumerate}
+\item La base $\mathcal B'=(\vec u+\vec v, -\vec u+2\vec v)$ a la même orientation que $\mathcal B$.
+\item La base $\mathcal B''=(\vec v, \vec u)$ a l'orientation inverse de celle de $\mathcal B$.
+\end{enumerate}
+\end{exemples}
+
+Orientation, bases directes, indirectes
+
+\begin{proposition}
+La formule pour l'écriture du déterminant est la même dans toute base orthonormée directe.
+\end{proposition}
+
+\begin{proposition}
+\begin{enumerate}
+\item (bilinéarité)
+\item (Le déterminant est une forme bilinéaire alternée)
+\item (Le déterminant est une forme bilinéaire antisymétrique)
+\end{enumerate}
+\end{proposition}
+
+Interprétation géométrique : condition de colinéarité.
+
+Interprétation géométrique : $\lvert \det(\vec u, \vec v)\rvert $ est l'aire du parallélogramme porté par $\vec u$ et $\vec v$. (Sans les valeurs absolues, on obtient l'aire algébrique, qui tient compte de l'orientation, et vérifie de meilleures formules.)
+
+\begin{exemple}
+Soit $ABC$ le triangle dont les sommets ont pour affixe $a=1+i$, $b=5+2i$ et $c=3+4i$. Alors il a une aire égale à 
+\[\mathcal A(ABC)= \frac12\left|\Im \overline{(b-a)}(c-a)\right| = \frac12\left|\Im (4-i)(2+3i)\right|=5\]
+\end{exemple}
+

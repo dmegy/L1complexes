@@ -1,0 +1,90 @@
+
+Soit $z \in\C$ . On a 
+\[z\overline z = \Re(z)^2 + \Im(z)^2 \in \R_+.\]
+Il est donc licite de former la racine carrée de $z\overline z$, qui est un réel positif.
+
+\begin{definition}
+On note $|z|$ et on appelle \emph{module de $z$} le nombre réel positif $\sqrt{z\overline z}$. 
+\end{definition}
+
+Si $z$ est réel, le module de $z$ est la valeur absolue de $z$. Ceci explique la notation $|z|$ pour le module. En termes d'applications entre ensembles et non plus seulement d'éléments, le module est une application de $\C$ dans $\R_+$.
+
+\begin{proposition}
+Le module, vu comme application de $\C$ dans $\R_+$, est une application surjective, mais non injective.
+\end{proposition}
+\begin{proof}
+Surjectivité : soit $r\in\R_+$. Comme $\abs{r}=r$, on en déduit que l'application module est surjective sur $\R_+$. Pour la non-injectivité, on remarque que $\abs 1 = \abs i = \abs{-1}$.
+\end{proof}
+
+\begin{proposition}
+Le module est une application multiplicative, autrement dit:
+\[ \forall (z,w)\in\C^2, \abs{z w}=\abs z \abs w.\]
+\end{proposition}
+\begin{proof}
+On applique la définition. Soient $z$ et $w$ des complexes. Montrons que $\abs{z w}$ et $\abs z \abs w$ sont égaux. Comme ce sont des réels positifs, il revient au même de montrer que leurs carrés sont égaux. Or, on a par définition du module:
+\[
+\abs{zw}^2 
+= zw\overline{zw} 
+= z\overline z w\overline w 
+= \abs{z}^2 \abs{w}^2 
+= \left(\abs z\abs w\right)^2 
+\]
+\end{proof}
+
+\begin{proposition}
+Pour tout $z\in \C$, on a $\abs{\overline z} = \abs z$.
+\end{proposition}
+\begin{proof} Exercice.\end{proof}
+
+
+\begin{proposition} 
+\begin{enumerate}
+\item $\forall z\in\C,\: |z|=0\iff z=0$.
+\item $\forall z\in\C,\: \Re(z) \leq |z|$, avec égalité ssi $z\in\R_+$.
+\item $\forall z,w\in\C,\: |z+w| \leq |z|+|w|$, avec égalité ssi $\overline z w\in\R_+$.
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+\begin{enumerate}
+\item Soit $z\in\C$. Comme $\abs z$ est un réel positif, il est nul ssi son carré est nul. On a donc:
+\[ |z|=0\iff |z|^2=0\iff \Re(z)^2+\Im(z)^2=0 \iff \begin{cases}\Re(z)=0\\ \Im(z)=0\end{cases} \iff z=0.\]
+\item On remarque que
+\[\Re(z) \leq |\Re(z)| = \sqrt{\Re(z)^2} \leq \sqrt{\Re(z)^2+\Im(z)^2} = |z|\]
+avec égalité ssi les deux inégalités sont des égalités, c'est-à-dire $\Im(z)=0$ et $\Re(z)=|\Re(z)|$, autrement dit $z\in\R_+$.
+\item Il est équivalent de montrer l'inégalité entre les carrés des quantités, puisque celles-ci sont positives.
+\[
+|z+w|^2 
+= |z|^2+2\Re(\overline{z}w) +|w|^2 
+\leq |z|^2+2\abs{\overline z w}  +|w|^2
+= |z|^2+2\abs z \abs w  +|w|^2
+= (|z|+|w|)^2
+\]
+avec égalité ssi $\overline z w \in\R_+$ d'après le deuxième point.
+
+\end{enumerate}
+\end{proof}
+
+\begin{definition} On appelle \emph{cercle unité de $\C$} et on note $\U$ l'ensemble $\{z\in\C\:|\: |z|=1\}$.
+\end{definition}
+
+\begin{proposition}
+\begin{enumerate}
+\item $\U \subseteq \C^*$.
+\item Stabilité de $\U$ par produit : $\forall (z,w)\in\U^2, zw\in\U$.
+\item Stabilité de $\U$ par inverse : $\forall z\in\U, \frac{1}{z} \in\U$.
+\end{enumerate}
+On résume ces deux propriétés en disant que $\U$ est un \emph{sous-groupe multiplicatif} de $\C^*$.
+\end{proposition}
+\begin{proof}
+\begin{enumerate}
+\item Soit $z\in\U$. Comme $\abs z=1$, on a $z\neq 0$. Donc $z\in\C^*$.
+\item Ceci découle de la multiplicativité du module. Soient $z$ et $w$ dans $\U$. Alors $\abs{zw} = \abs z \cdot \abs w = 1\times 1 = 1$, donc $zw\in\U$.
+\item Soit $z\in\U$. On a $\abs{\frac1z} = \frac{1}{\abs z} = \frac11=1$.
+\end{enumerate}
+\end{proof}
+
+
+
+Remarquons pour finir que l'application
+\[ \theta : \begin{cases}\C^* \to \U,\\ z\mapsto \frac{z}{|z|}\end{cases}\]
+est surjective et multiplicative.

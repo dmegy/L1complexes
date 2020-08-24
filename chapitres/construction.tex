@@ -1,0 +1,140 @@
+Pour simplifier, on dit parfois que les nombres complexes sont obtenus à partir des nombres réels en \og ajoutant un élément $i$ qui vérifie la relation $i^2=-1$, et en calculant avec les règles de calcul usuelles\fg.
+
+Cette phrase n'est pas vraiment satisfaisante : quel est cet élément ? Comment le fabrique-t-on ? Comment fait-on pour \og l'ajouter\fg ? Peut-on ajouter tout et n'importe quoi juste en le décrétant de la sorte ?
+
+Pour bien faire sentir ce qu'une telle phrase a d'abusif, et en quoi elle ne peut pas être qualifiée de définition mathématique, considérons un court instant d'autres situations semblables : 
+\begin{itemize}
+\item Peut-on ajouter à $\R$ un élément \og$\infty$\fg{} qui soit plus grand que tous les nombres réels ? Peut-on continuer à calculer comme auparavant\footnote{Supposons que ce soit possible. Comment définir l'addition ? Si l'on décide que $\infty+2=\infty$, par exemple, comment gérer la soustraction ? On devrait par exemple pouvoir soustraire $\infty$ aux deux membres de l'équation précédente, mais cela conduirait à $2=0$... (Enfin, si on part du principe que $\infty-\infty=0$... mais est-ce le cas ? Est-ce quelque chose que l'on postule, ou bien quelque chose que l'on démontre ?) }?
+\item Peut-on ajouter à $\R$ un élément $\alpha$ qui vérifie par exemple $\alpha\geq 2$ et aussi $\alpha\leq 1$ ? Peut-on continuer à calculer comme auparavant\footnote{Voir le cours sur les relations d'ordre (UE \og fondements des mathématiques\fg) : ce qui est sûr c'est que la relation obtenue ne peut pas être une relation d'ordre, car la transitivité impliquerait que $2\leq 1$, ce qui est faux. Donc même si on peut rajouter un tel élément, l'intérêt reste assez limité} ?
+\end{itemize}
+
+Si vous pensez que non, alors pourquoi accepter d'ajouter un élément $i$ vérifiant $i^2=-1$, propriété tout aussi impossible avec les nombres réels ?
+
+
+Si on veut avoir un élément $i$ vérifiant $i^2=-1$ (relation impossible avec des nombres réels), il ne suffit pas d'affirmer qu'il existe et de dire qu'on le rajoute: il faut:
+\begin{enumerate}
+\item Le construire mathématiquement.
+\item Ensuite il faut expliquer ce que signifie $i^2$ (c'est-à-dire $i\times i$). Il faut donc définir ce que signifie le produit dans ce nouveau contexte : comme $i$ n'est pas un nombre réel, la multiplication doit être définie. D'ailleurs, l'addition doit également être définie.
+\item Ensuite, il faut montrer que les règles de calcul habituelles s'appliquent toujours avec ce produit et cette  somme sur les nouveaux objets que sont les nombres complexes (possibilité de soustraire, de diviser, distributivité etc). Un exemple tout simple : on a défini le produit de nombres complexes, et la somme de nombres complexes : mais a-t-on bien que $2\times i = i+i$, avec cette somme et ce produit ? Si on définit la somme et le produit n'importe comment, ça ne marchera pas.
+\item Enfin, il faut démontrer qu'avec les nouvelles opérations $+$ et $\times$ que l'on a défini et qui se comportent comme on s'y attend, le produit $i\times i$ vaut effectivement $-1$.
+\end{enumerate}    
+
+Aucune de ces étapes ne va de soi.
+
+
+\begin{mdframed}
+Encore une fois, la morale est donc qu'on ne fabrique pas un objet mathématique juste en le voulant. Il faut construire concrètement les nouveaux objets, et démontrer mathématiquement qu'ils se comportent comme on le souhaite. Et parfois, ce n'est pas possible.
+
+Heureusement, pour les nombres complexes, la construction est possible !
+\end{mdframed}
+
+
+Il existe plusieurs manières de construire les nombres complexes, qui ont toutes leur intérêt. La plus courante au niveau Terminale/L1 depuis une trentaine d'années\footnote{Auparavant, on utilisait des matrices, mais ça suppose de connaître le produit matriciel et d'être à l'aise en algèbre. Cette construction n'est plus adaptée aux programmes actuels. La méthode actuelle est plus simple et au bout du compte équivalente. Son seul défaut est de \og parachuter\fg{} la formule du produit sans trop expliquer d'où ça vient.} consiste à utiliser des couples de réels.
+
+\paragraph{Construction}
+
+
+
+
+\paragraph{Parties réelle et imaginaire, règles de calcul}
+
+Dans ce paragraphe, on récapitule quelques propriétés de la partie réelle et de la partie imaginaire d'un nombre complexe. Si $z$ est un nombre complexe, on peut bien sûr considérer les nombres réels $\Re z$ et $\Im z$, mais de façon plus globale, la partie réelle et la partie imaginaire sont des applications:
+
+\[ \Re : \quad \C\to \R, z\mapsto \Re(z)\]
+\[ \Im : \quad \C\to \R, z\mapsto \Im(z)\]
+
+%(Parfois, on considère ces deux applications comme étant à valeurs dans $\C$, en utilisant le plongement usuel (on dit \og canonique\fg) de $\R$ dans $\C$, qui permet de considérer tout nombre réel comme un nombre complexe.)
+
+\begin{attention}
+La partie imaginaire d'un nombre complexe est un \underline{réel}. La partie imaginaire de $1+2i$ est $2$, pas $2i$.
+\end{attention}
+
+\begin{exomarge}
+L'application partie réelle $\Re : \C\to \R, z\mapsto \Re z$ est-elle injective ? Surjective ?
+%\footnote{Réponses : non, et oui.}% attention, float dans un float -> erreur latex
+\end{exomarge}
+
+\begin{proposition}[Additivité]
+Les applications $\Re$ et $\Im$ sont additives.
+\end{proposition}
+\begin{proof}
+
+\end{proof}
+
+L'additivité a la conséquence suivante, bien pratique pour certains calculs : 
+
+\begin{corollaire}
+Soit $n\in \N^*$ et $(z_k)_{1\leq k \leq n}$ une famille de nombres complexes. Alors, on a
+\[ \Re\left(\sum_{k=1}^n z_k\right) = \sum_{k=1}^n \Re\left(z_k\right)\]
+\[ \Im\left(\sum_{k=1}^n z_k \right)= \sum_{k=1}^n \Im\left(z_k\right)\]
+Autrement dit, on peut \og sortir la somme \fg{} d'une partie réelle ou d'une partie imaginaire.
+\end{corollaire}
+\begin{proof}
+Exercice. (Récurrence, en utilisant la proposition précédente (additivité) pour prouver l'hérédité.)
+\end{proof}
+
+\begin{proposition}[Homogénéité]
+Les applications $\Re$ et $\Im$ sont homogènes, ce qui signifie la chose suivante:
+\[ \forall z\in\C, \forall \lambda\in \R, \begin{cases}\Re(\lambda z)=\lambda \Re z\\ \Im(\lambda z) = \lambda \Im z\end{cases}\]
+\end{proposition}
+
+% éventuellement mettre en remarque l'homogénéité de degré supérieur ?
+% par exemple https://fr.wikipedia.org/wiki/Fonction_homog%C3%A8ne
+
+\begin{exemple}
+On a par exemple $\Re(3z)=3\Re z$, $\Im\left(\frac{2z}{\sqrt 3}\right) = \frac{2}{\sqrt 3}\Im z$ ou encore $\Re(-\pi z)=-\pi\Re z$. (Exemples obtenus en prenant $\lambda=3$, $\lambda = \frac{2}{\sqrt 3}$ et $\lambda=-\pi$.)
+\end{exemple}
+
+\begin{attention}
+Dans la propriété d'homogénéité, $\lambda$ doit être réel, et non complexe, sinon ça ne marche en général pas. C'est pour cela que l'on écrit parfois \og $\R$-homogène\fg{} au lieu de simplement \og homogène\fg.
+\end{attention}
+
+\begin{exomarge}
+Montrer que l'assertion suivante est \textbf{fausse} :
+\begin{multline*}
+ \forall z\in \C, \forall \lambda \in \C,\\
+  \Re(\lambda z)=\lambda \Re z.
+\end{multline*}
+\end{exomarge}
+
+\begin{exomarge}
+Montrer que $\Re$ et $\Im$ ne sont pas multiplicatives, c'est-à-dire que les deux assertions suivantes sont \textbf{fausses} :
+\begin{multline*}
+\forall (z,z')\in\C^2,\\ \Re(zz') = \Re(z)\cdot \Re(z')
+\end{multline*}
+et
+\begin{multline*}
+\forall (z,z')\in\C^2, \\ \Im(zz') = \Im(z)\cdot \Im(z')
+\end{multline*}
+\end{exomarge}
+
+Le fait d'avoir à la fois l'homogénéité et l'additivité porte un nom spécial : la $\R$-linéarité. En général, cette proprité est formulée de la façon suivante.
+
+\begin{proposition}
+Les applications $\Re$ et $\Im$ sont $\R$-linéaires, ce qui signifie
+\[ \forall z, w\in \C, \forall \lambda, \mu \in \R, \Re(\lambda z+\mu w) = \lambda \Re z + \mu \Re w\]
+\[ \forall z, w\in \C, \forall \lambda, \mu \in \R, \Im(\lambda z+\mu w) = \lambda \Im z + \mu \Im w\]
+\end{proposition}
+\begin{proof}
+Soient $z, w\in \C$ et $\lambda, \mu \in \R$. Alors on a:
+\begin{align*}
+\Re(\lambda z+\mu w) &= \Re(\lambda z) + \Re(\mu w) & \text{Additivité}\\
+&= \lambda \Re z + \mu \Re w & \text{Homogénéité}
+\end{align*}
+La même preuve marche pour la partie imaginaire.
+\end{proof}
+
+\begin{mdframed}
+Les propriétés d'additivité et de $\R$-linéarité sont exrêmement importantes, et vous les recroiserez à d'innombrables reprises les prochains mois (en particulier dans le cours d'algèbre linéaire). C'est une bonne chose de commencer à rencontrer ce mot assez tôt, et à apprendre tout doucement à utiliser la notion.
+\end{mdframed}
+
+La $\R$-linéairité a la conséquence suivante :
+
+\begin{corollaire}
+Soit $n\in \N^*$, $(z_k)_{1\leq k \leq n}$ une famille de nombres complexes et $(\lambda_k)_{1\leq k \leq n}$ une famille de nombres réels. Alors, on a
+\[ \Re\left(\sum_{k=1}^n \lambda_kz_k\right) = \sum_{k=1}^n \lambda_k\Re\left(z_k\right)\]
+\[ \Im\left(\sum_{k=1}^n \lambda_kz_k\right) = \sum_{k=1}^n \lambda_k\Im\left(z_k\right)\]
+\end{corollaire}
+\begin{proof}
+Exercice. (Récurrence, en utilisant la proposition prédédente ($\R$-linéarité) pour prouver l'hérédité.)
+\end{proof}

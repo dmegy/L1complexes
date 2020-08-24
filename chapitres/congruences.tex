@@ -1,0 +1,193 @@
+\begin{definition}
+Soit $\alpha\in\R$. On note $\alpha\Z$ l'ensemble
+\[ \alpha\Z=\ensemble{k\alpha}{k\in\Z}\]
+C'est un sous-ensemble de $\R$.
+\end{definition}
+
+\begin{exemples}
+\begin{enumerate}
+\item L'ensemble $3\Z$ est $\set{\cdots -3, 0, 3, 6, 9, \cdots}$.
+\item L'ensemble $\sqrt3\Z$ est $\set{\cdots -2\sqrt 3, -\sqrt 3, 0, \sqrt 3, 2\sqrt 3, 3\sqrt 3,\cdots}$.
+\item L'ensemble $2\pi\Z$ est $\set{\cdots -6\pi, -4\pi, -2\pi, 0, 2\pi, \cdots}$.
+\item L'ensemble $0\Z$ est $\{\cdots, -2\times0, -1\times 0, 0, 1\times 0, 2\times 0, \cdots\}$ c'est-à-dire tout simplement $\{0\}$.
+\end{enumerate}
+\end{exemples}
+
+On voit donc qu'un ensemble du type $\alpha\Z$ est soit infini, soit $\{0\}$ dans le cas spécial où $\alpha=0$. Dans la suite, on n'utilisera les ensembles du type $\alpha\Z$ que lorsque $\alpha\neq$. \\
+
+\fbox{On fixe donc un nombre réel $\alpha\neq 0$ pour toute la suite.}
+
+
+
+
+\begin{proposition}
+Soient $x$ et $y$ réels, et $a\neq 0$ un réel non nul. Les assertions suivantes sont équivalentes:
+\begin{enumerate}
+\item $\frac{x-y}{\alpha} \in \Z$;
+\item $x-y \in \alpha\Z$;
+\item $(\exists k\in\Z,\: x-y=k\alpha)$;
+\item $(\exists k\in\Z,\: x= y + k\alpha)$.
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+Exercice. Remarquer que si $t$ est un réel, l'assertion \og $t\in\Z$\fg{} est équivalente à \og$\exists k\in\Z, t=k$\fg.
+\end{proof}
+
+
+\begin{attention}
+Certains ont pris l'habitude d'écrire des choses comme:
+\[ x=y+2k\pi, k\in\Z.\]
+Il faut se \textbf{débarasser} de cette mauvaise habitude, qui a peut-être été pardonnée les années précédentes, comme beaucoup d'autres choses, mais qui ne le sera plus. En pratique, ceux qui écrivent de cette façon peuvent rarement expliquer si leur égalité est vraie pour tout $k$, pour certains, pour un seul, la rédaction est floue et d'ailleurs c'est souvent un peu l'objectif... Cette faute sera fortement sanctionnée jusqu'à ce que la mauvaise habitude disparaisse. Soit la variable $k$ a été déclarée au préalable, soit c'est $\forall k\in\Z, x=y+2k\pi$, soit c'est $\exists k\in\Z, x=y+2k\pi$
+\end{attention}
+
+\begin{definition}
+Soient $x$ et $y$ des réels.
+On dit que $x$ est congru à $y$ modulo $\alpha$, et on écrit $x\equiv y~[\alpha]$, ou bien $x\equiv y \pmod \alpha$, si une des conditions équivalentes ci-dessus est vérifiée, autrement dit si le réel $x-y$ est un multiple \textbf{entier} (positif ou négatif) de $\alpha$.
+\end{definition}
+
+\begin{remarque}
+La première assertion $\frac{x-y}{\alpha} \in\Z$ est souvent la plus maniable. C'est en général celle-là que l'on utilise dans les démonstrations.
+\end{remarque}
+
+\begin{attention}
+Certains ont commencé à étudier les congruences au lycée, souvent en arithmétique. C'est une notion assez subtile: certaines règles intuitives s'appliquent, d'autres non. De plus, on étudie ici une version générale (congruence modulo un réel $\alpha$), et certaines propriétés vraies dans les cas simples deviennent fausses en général. Par exemple, on ne peut \textbf{pas} multiplier les congruences en général, contrairement à une idée reçue tenace. Voir plus bas. 
+\end{attention}
+
+\begin{exemples}
+\begin{enumerate}
+\item $1 \equiv 5~[2]$, car $1-5 = -4$ est un multiple de $2$.
+\item $4\equiv -9\sqrt{3}+4~[\sqrt{3}]$, car $4 - (-9\sqrt{3}+4) = 9\sqrt{3}$ est un multiple de $\sqrt{3}$.
+\item $\pi/3 \equiv 7\pi/3~[2\pi]$, car $\pi/3 - 13\pi/3 = -12\pi/3 = -4\pi$ est un multiple de $2\pi$.
+\end{enumerate}
+\end{exemples}
+
+
+
+\begin{proposition}[La congruence est une relation d'équivalence]
+La congruence vérifie les trois propriétés suivantes : 
+\begin{enumerate}
+\item Réflexivité : $\forall x\in\R, x\equiv x\mod \alpha$;\\
+\item Symétrie : $\forall (x,y)\in\R^2, (x\equiv y \mod \alpha)\implies (y\equiv x \mod \alpha)$;\\
+\item Transitivité : $\forall (x,y,z)\in\R^3, (x\equiv y\mod \alpha\text{ et }y\equiv z\mod \alpha)\implies (x\equiv z\mod \alpha)$.
+\end{enumerate}
+On résume ces trois propriétés en disant que la congruence modulo $\alpha$ est une relation d'équivalence. 
+ \end{proposition}
+ \begin{proof}
+Exercice.
+ \end{proof}
+
+
+\begin{proposition}[addition et multiplications de congruences]
+Soit $b\neq 0$ un réel non nul et $x$, $y$, $x'$, $y'$ des réels.
+\begin{itemize}
+\item Addition : si $x \equiv y\mod \alpha$ et $x' \equiv y'\mod \alpha$, alors: $x+x' \equiv y+y'\mod \alpha$.
+\item Multiplication : on a l'équivalence $x \equiv y\mod \alpha \iff bx\equiv by \mod{b\alpha}$. 
+\end{itemize}
+\end{proposition}
+\begin{proof}
+\begin{enumerate}
+\item Par la proposition précédente, on a $\frac{x-y}{\alpha} \in \Z$ et $\frac{x'-y'}{\alpha} \in \Z$. Donc $\frac{x-y}{\alpha}+\frac{x'-y'}{\alpha} \in \Z$, c'est-à-dire  $\frac{(x+x')-(y+y')}{\alpha} \in \Z$, c'est-à-dire $x+x' \equiv y+y' \mod \alpha$.
+\item On a une chaîne d'équivalences : 
+\[\left(x\equiv y\mod \alpha\right) \Leftrightarrow  \left(\frac{x-y}{\alpha} \in \Z\right) \Leftrightarrow \left(\frac{bx-by}{b\alpha} \in \Z\right) \Leftrightarrow \left(bx\equiv by\mod b\alpha\right).\]
+\end{enumerate}
+\end{proof}
+
+\begin{attention}
+\begin{enumerate}
+\item Pour l'addition, ce n'est pas une équivalence, au sens où si on sait seulement que $x+x' \equiv y+y'\mod \alpha$, on ne peut en aucun cas conclure que $x \equiv y\mod \alpha$ et $x' \equiv y'\mod \alpha$ ! On a par exemple $1+3\equiv 0+0 \mod 4$, mais $1\not\equiv 0 \mod 4$ et $3\not\equiv 0 \mod 4$. 
+\item Pour la multiplication, ne pas oublier de multiplier également la base de congruence, c'est-à-dire de remplacer le modulo $\alpha$ par modulo $b\alpha$ ! 
+\end{enumerate}
+\end{attention}
+
+\begin{attention}
+Il est important d'insister sur le dernier point : \textbf{on ne peut pas multiplier une congruence par un facteur sans multiplier également la base de congruence}. Il est facile d'exhiber des contre-exemples:
+
+\begin{align*}
+6\equiv 4 \mod 2 &\text{, et pourtant } 6\pi \not\equiv 4\pi \mod 2\\
+6\equiv 4 \mod 2 &\text{, et pourtant } 6\sqrt2 \not\equiv 4\sqrt2 \mod 2\\
+6\equiv 4 \mod 2 &\text{, et pourtant } 6\cdot \frac12 \not\equiv 4\cdot\frac12 \mod 2\\
+\end{align*}
+
+On ne peut pas non plus multiplier deux congruences entre elles, même si la base de congruence est identique:
+\[ \begin{cases} 1\equiv 0 \mod 1\\ \sqrt 3 \equiv 1+\sqrt 3 \mod 1\end{cases}, \text{ et pourtant }
+\sqrt 3 \not\equiv 0 \mod 1
+\]
+\end{attention}
+
+\begin{mdframed}
+Les erreurs de compréhension sur la multiplication semblent être causées par le fait suivant:
+\begin{exercice}
+Soient $x$ et $y$ des réels, et $n$ un \underline{entier} (relatif). Si $x\equiv y\mod \alpha$, alors $nx\equiv ny \mod \alpha$.
+\end{exercice}
+Ce résultat est correct et sa preuve est facile, mais :
+\begin{enumerate}
+\item Il est moins précis que la proposition précédente, qui affirme $nx\equiv ny \mod n\alpha$. Pr exemple, si $x\equiv y \mod 3$, il est exact que $2x\equiv 2y \mod 3$, mais ceci est moins précis que $2x\equiv 2y \mod 6$.
+\item Ce n'est pas une équivalence. Par exemple, même si $2x\equiv 2y \mod 3$, on ne peut en aucun cas en déduire que $x\equiv y \mod 3$.
+\end{enumerate}
+Donc même dans ce cas, il est fortement déconseillé d'utiliser cet énoncé : même dans les cas où il est correct, il fournit un outil moins fort et moins maniable que la proposition.
+\end{mdframed}
+
+Les règles de calcul énoncées dans la proposition servent couramment à résoudre des équations faisant intervenir des congruences :
+\begin{exercice}
+Résoudre sur $\R$ l'équation $2x+5\equiv \sqrt 3 \mod 7$.
+\begin{red}
+Soit $x\in \R$. Alors on a 
+\begin{align*}
+2x+5\equiv \sqrt 3 \mod 7 
+&\iff 2x\equiv \sqrt 3 - 5 \mod 7  & \text{(addition de congruences)}\\
+&\iff x\equiv \frac{\sqrt3-5}{2} \mod{\frac72} &\text{(multiplication par $1/2$)}
+\end{align*}
+\end{red}
+(Écrire $7$ au lieu de $7/2$ à la fin revient à oublier la moitié des solutions.)
+\end{exercice}
+Autre exemple:
+\begin{exercice}
+Résoudre sur $\R$ l'équation $\cos(2x+1)=\sin(x)$.
+\begin{red}
+Soit $x\in \R$. Alors on a 
+\begin{align*}
+\cos(2x+1)=\sin(x) 
+&\iff \cos(2x+1)=\cos(\pi/2-x)  &  & \\
+&\iff 2x+1\equiv \frac{\pi}{2}-x \mod 2\pi &\text{ OU }&  2x+1\equiv x-\frac{\pi}{2} \mod 2\pi   \\
+&\iff 3x\equiv \frac{\pi}{2}-1 \mod 2\pi &\text{ OU }&  x\equiv -1-\frac{\pi}{2} \mod 2\pi   \\
+&\iff x\equiv \frac{\pi}{6}-\frac13 \mod{\frac{2\pi}{3}} &\text{ OU }&  x\equiv -1-\frac{\pi}{2} \mod 2\pi 
+\end{align*}
+\end{red}
+\end{exercice}
+
+
+On termine par deux résultats qui servent très souvent.
+
+\begin{exemple}[très important pour la suite]
+Soit $n \in \N^*$. L'équation 
+\[n\theta \equiv 0\mod2\pi,\]
+d'inconnue $\theta \in [0,2\pi[$, admet $n$ solutions. En effet, on a 
+\[n\theta \equiv 0\mod 2\pi \iff \theta \equiv 0\mod 2\pi/n \iff \left(\exists k \in \llbracket 0,n-1 \rrbracket, \theta = \frac{2k\pi}{n}\right).\]
+\end{exemple}
+
+
+
+
+\begin{proposition}
+Soit $a\in\R_+^*$ et $x \in \R$.
+Alors il existe un unique réel $y \in[0,a[ $ tel que $x \equiv y\quad [a]$.
+\end{proposition}
+
+\begin{proof}
+Soit $y \in [0,a[$. On a donc $0\leq \frac{y}{a} < 1$, donc $-\frac{y}{a}\leq 0 < 1 -\frac{y}{a}$. En ajoutant $\frac{x}{a}$ aux trois membres on obtient: $\left(\frac{x-y}{a}\right)\leq \frac{x}{a} < 1 +\left(\frac{x-y}{a}\right)$.
+On en déduit les équivalences suivantes:
+\[ \frac{x-y}{a} \in \Z \Leftrightarrow \frac{x-y}{a} = \left\lfloor \frac{x}{a}\right\rfloor \Leftrightarrow y=x-a.\left\lfloor\frac{x}{a}\right\rfloor.\]
+Ceci montre qu'il existe un unique réel $y \in [0,a[$ tel que $ \frac{x-y}{a} \in \Z$, c'est-à-dire tel que $x \equiv y\quad [a]$. Il est donné par $y=x-a.\left\lfloor\frac{x}{a}\right\rfloor$.
+\end{proof}
+
+\paragraph{Classes de congruence}
+
+\begin{definition}
+Soit $x$ un réel. On appelle \textbf{classe de congruence de $x$ modulo $\alpha$} et on note $[x]_\alpha$  l'ensemble des réels qui sont congruents à $x$ modulo $\alpha$, autrement dit c'est l'ensemble : 
+\[ [x]_\alpha=\ensemble{y\in\R}{y\equiv x \mod \alpha}\]
+D'après l'équivalence de définitions prouvée plus haut, on peut écrire cet ensemble sous la forme
+\[ [x]_\alpha=\ensemble {x+k\alpha}{k\in\Z}\]
+% Pour cette raison, on note également la classe de congruence sous la forme suivante : 
+% \[ [x]_\alpha=x+\alpha\Z\]
+% trop tôt, nécessiterait trop de mises en garde sur la notation
+\end{definition}

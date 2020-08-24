@@ -1,0 +1,368 @@
+
+\section{Définition, unicité de l'écriture complexe, cas particuliers}
+
+
+\begin{definition}
+Soit $f : \mathcal P\to \mathcal P$. On dit que c'est une similitude directe s'il existe $a\in\C^*$ et $b\in\C$ tels que
+\[ \forall z\in\C, \tilde f(z)=az+b\]
+\end{definition}
+
+
+La définition précédente ne demande pas que les nombres complexes $a$ et $b$ soient uniques. En fait, s'ils existent, ils le sont automatiquement d'après le résultat suivant :
+
+\begin{proposition}
+Soient $a$, $a'$, $b$ et $b'$ des complexes tels que
+\[ \forall z\in\C, az+b=a'z+b'\]
+Alors $a=a'$ et $b=b'$.
+\end{proposition}
+\begin{proof}
+En prenant $z=0$, on obtient $b=b'$. Comme $b=b'$ on obtient ensuite $\forall z\in\C, az=a'z$, et en prenant $z=1$ on obtient $a=a'$. 
+\end{proof}
+
+\begin{remarque}
+D'après la proposition précédente, si $\phi$ est une similitude directe, les paramètres $a$ et $b$ de la définition sont forcément \textbf{uniques}.
+\end{remarque}
+
+\section{Cas particuliers : rotations, translations, homothéties}
+
+\begin{proposition}
+Les rotations, les translations sont des cas particuliers de similitudes directes.
+\end{proposition}
+\begin{proof}
+D'après le cours sur les isométries classiques, une translation est de la forme $z\mapsto z+b$ donc est une similitude directe. De même, une rotation est de la forme $a\mapsto az+b$ (avec $|a|=1$, et $b=0$ si jamais $a=1$), c'est donc aussi une similitude directe.
+\end{proof}
+
+
+Il existe des similitudes qui ne sont pas des rotatins ou des translations. Par exemple, la transformation $z\mapsto 2z$ est manifestement une similitude directe, mais $0\mapsto 0$ et $1\mapsto 2$ ce qui montre que les distances ne sont pas conservées. Ce n'est donc pas une isométrie, et a fortiori ce n'est ni une rotation ni une rotation. Cette transformation appartient en fait à une autre grande famille de transformations classiques du plan : les homothéties, que l'on introduit ci-dessous.
+
+\begin{definition}
+Soit $f : \mathcal P \to \mathcal P$. On dit que $f$ est une \emph{homothétie} s'il existe $\Omega\in\mathcal P$ est $\lambda\in\R^*$ tels que
+\[ \forall M\in\mathcal P, \overrightarrow{\Omega f(M)} = \lambda \overrightarrow{\Omega M}.\]
+
+Autrement dit, $f$ est une homothétie s'il existe $\omega\in\C$ et $\lambda\in\R^*$ tels que
+\[ \forall z\in\C, f(z)-\omega=\lambda(z-\omega).\]
+\end{definition}
+
+\begin{exemple}
+La transformation du plan correspondant à $z\mapsto 2z$ est une homothétie. Celle correspondant à $z\mapsto -z/2+3i$ aussi. (Prendre $\lambda=-1/2$ et $\omega=2i$ : on vérifie en effet que $f(z)-\omega = f(z)-2i = -z/2+i=\frac{-1}{2}(z-2i)=\lambda(z-\omega)$.)
+\end{exemple}
+
+\begin{mdframed}
+Attention, il existe des similitudes directes qui ne sont ni des translations, ni des rotations, ni des homothéties, par exemple l'application correspondant à $z\mapsto 2iz+1$.
+\end{mdframed}
+
+\section{Bijectivité, composition, réciproque}
+
+\begin{proposition}[Les similitudes directes forment un groupe pour la composition]
+\begin{enumerate}
+\item La composée de deux similitudes directes est une similitude directe.
+\item Une similitude directe est bijective et sa réciproque est une similitude directe.
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+\begin{enumerate}
+\item Soient $f$ et $g$ deux similitudes directes. Alors, il existe $a,a'\in\C^*$ et $b, b'\in\C$ tels que $f$ et $g$ soient représentées par $z\mapsto az+b$ et $z\mapsto a'z+b'$. L'application composée $f\circ g$ est donnée par 
+\[ f\circ g : \C\to \C, z\mapsto f(g(z))=a(a'z+b')+b=(aa')z+(ab'+b)\]
+\item Soient $a\in\C^*$, $b\in \C$. Si $z$ et $w$ sont des nombres complexes, on a
+\[ w=az+b \iff z=\frac{w-b}{a}\]
+Ceci signifie que l'application $z\mapsto az+b$ est bijective et que sa réciproque est l'application $w\mapsto a^{-1}w-ba^{-1}$, qui est une similitude directe.\\
+Noter que l'on aurait alternativement pu exploiter la preuve du premier point, qui dit que si $f$ et $g$ sont des similitudes directes, alors :
+\[
+f\circ g = \Id 
+\iff \left(aa'=1\text{ et } ab'+b=0\right) 
+\iff \left(a'=a^{-1}\text{ et } b'=-ba^{-1}\right)
+\]
+\end{enumerate}
+\end{proof}
+
+Comme la composée de deux similitudes directes est une similitude directe, on en déduit en particulier que les composées de rotations, translations et homothéties sont toujours des similitudes directes.
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conservation des milieux, des barycentres, de l'alignement}
+
+On a déjà vu qu'une similitude directe ne conserve en général pas les distances, puisqu'elle les multiplie par le rapport $k$. 
+
+En revanche, elle conserve les barycentres et les angles orientés. Avant de parler de barycentres, on commence par un cas particulier dont la démonstration est simple
+
+\begin{proposition}
+Une similitude directe conserve les milieux.
+\end{proposition}
+\begin{proof}
+Il s'agit de montre que pour toute similitude directe $f$ et tout segment $[PQ]$ de milieu $M$, alors $f(M)$ est le milieu du segment $\left[f(P)f(Q)\right]$. Pour le montrer on passe en coordonnée complexe : on note $\tilde f : z\mapsto az+b$  l'écriture en coordonnée complexe de $f$. L'affixe de $M$ est $m=\frac{p+q}{2}$, et celui du milieu $M'$ de $[f(P)f(Q)]$ est $m'=\frac{\tilde f(p)+\tilde f(q)}{2}$. On veut montrer que $M'=f(M)$ c'est-à-dire $m'=\tilde f(m)$. Or on a :
+\[
+m'
+= \frac{\tilde f(p)+\tilde f(q)}{2}
+=\frac{ap+b+aq+b}{2}
+= a\frac{p+q}{2}+b 
+=\tilde f(m)
+\]
+\end{proof}
+
+La conservation des barycentres n'est qu'une version un peu plus évoluée du résultat précédent (le milieu de $P$ et $Q$ n'est autre que le barycentre de $P$et $Q$ avec coefficients $1/2$ et $1/2$). La preuve est semblable.
+
+\begin{proposition}[Conservation des barycentres]
+Soit $f$ une similitude directe. Alors, elle conserve les barycentres au sens suivant. Soit $(P_i)_{1\leq i\leq n}$ une famille de points du plan et $(\lambda_i)_{1\leq i\leq n}$ une famille de réels vérifiant $\sum_{i=1}^n\lambda_i=1$. Soit $P$ le parycentre des points $P_i$ avec coefficients $\lambda_i$, alors $f(P)$ est égal au barycentre $P'$ des points $f(P_i)$, affectés des mêmes coefficients $\lambda_i$.
+\end{proposition}
+\begin{proof}
+La similitude directe $f$ est représentée par $\tilde f : z\mapsto az+b$ avec $a\in\C^*$ et $b\in\C$.
+En coordonnée complexe, on a donc $p=\sum_{i=1}^n \lambda_ip_i$ et $p'=\sum_{i=1}^n \lambda_i\tilde f(p_i)$. On veut montrer que $p'=\tilde f(p)$. Pour cela on calcule $p'$ :
+
+\[ 
+p' = \sum_{i=1}^n\lambda_i\tilde f(p_i)
+= \sum_{i=1}^n\lambda_i(ap_i+b)
+= \sum_{i=1}^n a\lambda_ip_i + b\underbrace{\sum_{i=1}^n\lambda_i}_{=1}
+= a\left(\sum_{i=1}^n \lambda_ip_i\right)+b
+= ap+b 
+= \tilde f(p)  
+\]
+\end{proof}
+
+\begin{corollaire}
+Soit $ABC$ un triangle, d'image $A'B'C'$ par une similitude directe $f$. Alors $f$ envoie le centre de gravité de $ABC$ sur le centre de gravité de $A'B'C'$.
+\end{corollaire}
+\begin{proof}
+Le centre de gravité n'est autre que l'isobarycentre des trois sommets, autrement dit le barycentre des trois points avec coefficients $\frac13$.
+\end{proof}
+
+\begin{corollaire}
+Une similitude directe conserve l'alignement, autrement dit elle envoie une droite sur une droite.
+\end{corollaire}
+\begin{proof}
+Si $P$ et $Q$ sont deux points distincts, alors un point $M$ est aligné avec $P$ et $Q$ si et seulement c'est un barycentre de $P$ et $Q$.
+\end{proof}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Non-conservation des distances : rapport d'une similitude directe}
+
+\begin{definition}
+Soit $f$ une similitude directe, que l'on écrit $z\mapsto az+b$ en coordonnée complexe. Le rapport de $f$ est par définition le module de $a$. C'est un nombre réel strictement positif.
+\end{definition}
+
+\begin{exemple}
+La similitude directe représentée par $z\mapsto -3z+2$ est de rapport $3$. Celle représentée par $z\mapsto (3+4i)z+3-i$ est de rapport $5$.
+\end{exemple}
+
+\begin{proposition}
+Soit $f$ une similitude directe et $k\in\R_+^*$ son rapport. Alors $f$ \og multiplie toutes les distances par $k$\fg, ce qui signifie la chose suivante:
+\[ \forall (M, M') \in\mathcal P^2, \dist(f(M),f(M'))=k\dist(M,M')\]
+Ou encore, en coordonnée complexe:
+\[ \forall (z, z')\in\C^2, \abs{\tilde f(z')- \tilde f(z')} = k\abs{z'-z}\] 
+\end{proposition}
+\begin{proof}
+Les deux formulations sont équivalentes et on prouve donc la seconde. Soient $z$ et $z'$ deux nombres complexes. Alors on a 
+\begin{align*}
+\abs{\tilde f(z')- \tilde f(z')}
+&= \abs{az'+b-(az+b)}\\
+&= \abs{a(z'-z)}\\
+&=\abs{a}\cdot\abs{z'-z}\\
+&= k\abs{z'-z}
+\end{align*}
+\end{proof}
+
+\begin{remarque}
+Soit $f$ une similitude directe de rapport $k\in\R_+^*$. C'est une isométrie si et seulement si $k=1$.
+\end{remarque}
+
+\begin{comment}
+\begin{attention}
+La terminologie \emph{rapport} désigne deux choses différentes selon si on parle d'une homothétie ou bien d'une similitude. C'est un peu malheureux mais c'est comme ça.
+\begin{enumerate}
+\item Le rapport d'une homothétie est un réel non nul. Par exemple, une homothétie peut avoir rapport $-1$.
+\item Le rapport d'une similitude est un réel strictement positif. Une similitude ne peut pas avoir un rapport $-1$.
+\end{enumerate}
+Le problème est qu'une homothétie est un cas particulier de similitude. Considérons par exemple une symétrie centrale $f$, autrement dit une rotation d'angle $\pi$, ou encore, une \textbf{homothétie de rapport $-1$}. L'application $f$ est également une similitude, et \textbf{en tant que similitude}, son rapport est... $1$ (et pas $-1$).
+
+Avec l'habitude, ceci ne pose pas de problème mais si on n'est pas assez familier des différentes notions, on peut confondre les contextes et faire des fautes. Conclusion : faites des exercices d'entraînement !
+\end{attention}
+
+\begin{remarques}
+Considérons une similitude directe $f$. D'après ce qui précède, on peut attacher à $f$ deux paramètres uniques $a\in\C^*$ et $b\in\C$ qui sont ceux de la définition de similitude directe. La situation est alors résumée par le tableau suivant:\\
+
+\begin{tabular}{|l|c|c|c|}\hline
+			& $a=1$	& $|a|=1$ et $a\neq 1$	& $|a|\neq 1$	\\ \hline
+$b=0$		& Identité (translation et rotation) & rotation non triviale &  \\ \hline
+$b\neq 0$	& translation non triviale & rotation non triviale & \\ \hline 
+\end{tabular}
+\end{remarques}
+
+\end{comment}
+
+
+%\begin{proposition}
+%Soit $f$ une similitude directe, que l'on écrit $z\mapsto az+b$ en coordonnée complexe. Alors $f$ est une isométrie si et seulement si $|a|=1$.
+%\end{proposition}
+%\begin{proof}
+%Si $|a|=1$, on a vu que $f$ est  une isométrie.
+%
+%Réciproquement si $|a|\neq 1$, considérons les points $M$ et $M'$ d'affixes $z=0$ et $z'=1$ : ils sont à distance $1$. Par contre, les points $f(M)$ et $f(M'$ ont pour affixes $az+b=b$ et $az'+b = a+b$. Ils sont à distance $|f(z')-f(z)| = \abs{a+b-b}=|a|\neq 1$.
+
+%On en déduit que $f$ ne conserve pas les distances, et donc n'est pas une isométrie.
+%\end{proof}
+
+
+\section{Points fixes des similitudes directes}
+
+\begin{proposition}
+Soit $f :\mathcal P\to \mathcal P$ une similitude directe, et soient $a\in\C^*$ et $b\in\C$ tels que 
+\[ \forall z\in\C, \tilde f (z) = az+b\]
+\begin{enumerate}
+\item Si $a\neq 1$, alors $f$ admet un unique point fixe $\Omega$, d'affixe $\omega=\frac{b}{1-a}$.
+\item Si $a=1$, alors $f$ est une translation. Dans ce cas, il y a encore deux sous-cas possibles:
+\begin{enumerate}
+\item Si $a=1$ et $b=0$, l'application $f$ est l'identité et tous les points sont fixes.
+\item Si $a=1$ et $b\neq 0$, l'application $f$ est une translation non triviale, et aucun point n'est fixe.
+\end{enumerate}
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+\begin{enumerate}
+\item Si $a\neq 1$, alors considérons un point $M$ d'affixe $z$. Alors on a la chaîne d'équivalences:
+\begin{align*}
+M\text{ est fixe}
+&\iff f(M)=M& \text{(définition de point fixe)}\\
+&\iff \tilde f(z)=z & \text{(passage en coordonnée complexe)}\\
+&\iff az+b=z & \text{(écriture concrète)} \\
+&\iff z=\frac{b}{1-a}\quad \text{ car }a\neq 1
+\end{align*}
+\item Si $a=1$, alors $b$ peut être nul ou bien non nul :
+\item 
+\begin{enumerate}
+\item Si $a=1$ et $b=0$, l'application $\tilde f$ est $\tilde f : \C\to\C, z\mapsto z$ autrement dit c'est l'identité de $\C$, et donc $f$ est l'identité de $\mathcal P$. Tous les points sont fixes.
+\item Si $a=1$ et $b\neq 0$, l'application $\tilde f$ est $\tilde f : \C\to\C, z\mapsto z+b$. Elle n'a aucun point fixe puisque l'équation $z=z+b$ n'a aucune solution.
+\end{enumerate}
+\end{enumerate}
+\end{proof}
+
+
+\begin{definition}
+Soit $f$ une similitude directe. On dit que $f$ a un centre, ou encore, que $f$ est une similitude à centre, si elle a un unique point fixe, autrement dit si $a\neq 1$. Dans ce cas, son centre est par définition son unique point fixe.
+\end{definition}
+
+\section{Conservation des angles orientés}
+
+
+\begin{proposition}[Conservation des angles orientés]
+Soit $f$ une similitude directe, et $P$, $Q$ et $R$ trois point distincts. Alors
+\[ \widehat{(\overrightarrow{PQ}, \overrightarrow{PR})}
+\equiv \widehat{(\overrightarrow{f(P)f(Q)}, \overrightarrow{f(P)f(R)})} \mod 2\pi\]
+Autrement dit, en coordonnée complexe, si $p$, $q$ et $r$ sont trois complexes distincts, alors:
+\[ \arg\frac{r-p}{q-p} \equiv \arg \frac{\tilde f(r)-\tilde f(p)}{\tilde f(q)-\tilde f(p)} \mod 2\pi\]
+\end{proposition}
+\begin{proof}
+Les deux formulations sont équivalentes donc on ne démontre que la seconde. Écrivons $\tilde f : z\mapsto az+b$ la similitude en coordonnée complexe. Alors
+\[ \frac{\tilde f(r)-\tilde f(p)}{\tilde f(q)-\tilde f(p)}
+=\frac{ar+b-(ap+b)}{aq+b-(ap+b)}
+=\frac{a(r-p)}{a(q-p)}
+=\frac{r-p}{q-p}
+\]
+Donc les deux nombres complexes sont égaux et non nuls. Ils ont donc le même argument modulo $2\pi$.
+\end{proof}
+
+\begin{remarque}
+La proposition précédente donne une nouvelle démonstration de la conservation de l'alignement, puisque $P$, $Q$ et $R$ sont alignés ssi $\widehat{(\overrightarrow{PQ}, \overrightarrow{PR})}\equiv 0\text{ ou } \pi \mod 2\pi$.
+\end{remarque}
+
+
+Voici quelques exemples pour mieux comprendre la propriété de conservation des angles et la préservation des rapports de distances:
+
+
+\begin{exemples}
+\begin{enumerate}
+\item Une similitude directe envoie un triangle équilatéral direct sur un triangle équilatéral direct (mais éventuellement de taille et orientation différentes).
+\item Une similitude directe envoie un carré direct sur un carré direct (mais éventuellement de taille et orientation différentes). Elle envoie deux droites perpendiculaires sur deux autres droites perpendiculaires.
+\item Une similitude envoie un repère ortho\textbf{normé direct} sur un repère ortho\textbf{gonal direct} (mais pas normé : l'angle droit direct est conservé, mais pas les distances, qui sont toutes multipliées par le rapport $k$).
+\item Une similitude directe envoie un triangle sur un autre triangle ayant les mêmes angles, dans le même ordre (mais éventuellement de taille et orientation différentes). D'ailleurs, deux tels triangles sont dits \textbf{directement semblables}.
+\end{enumerate}
+\end{exemples}
+En ce qui concerne les angles, on a une propriété un peu plus forte que simplement la conservation des angles : l'existence d'un angle absolu qui est un élément caractéristique de la similitude. Ceci est expliqué dans le paragraphe suivant.
+
+
+\section{Angle d'une similitude directe}
+
+\begin{definition}
+Soit $f :\mathcal P\to \mathcal P$ une similitude directe, et soient $a\in\C^*$ et $b\in\C$ tels que 
+\[ \forall z\in\C, \tilde f (z) = az+b\]
+Soit $\theta\in\R$ un argument de $a$. Sa classe de congruence modulo $2\pi$ est \emph{l'angle} de la similitude $f$.
+\end{definition}
+
+\begin{exemple}
+La similitude correspondant à $z\mapsto (2+2i)z+4-3i$ a un angle égal à  $\pi/4$ (modulo $2\pi$). 
+\end{exemple}
+
+La terminologie est justifiée par le résultat suivant :
+
+\begin{proposition}
+Soit $f$ une similitude directe d'angle $\theta$ (modulo $2\pi$).
+\[ \forall (M,P)\in\mathcal P^2, M\neq P\implies \widehat{(\overrightarrow{MP}, \overrightarrow{f(M)f(P)})} \equiv \theta \mod 2\pi.\]
+De façon équivalente:
+\[ \forall (m,p)\in\C^2, m\neq p \implies \arg \frac{\tilde f(p)-\tilde f(m)}{p-m}\equiv \theta \mod 2\pi\]
+\end{proposition}
+\begin{proof}
+Les deux formulations sont équivalentes donc on ne démontre que la seconde. Écrivons $\tilde f : z\mapsto az+b$ la similitude en coordonnée complexe. Soient $m$ et $p$ des complexes distincts. Alors, on a 
+\[
+\frac{\tilde f(p)-\tilde f(m)}{p-m}
+= \frac{ap+b-(am+b)}{p-m}
+= \frac{a(p-m)}{p-m}
+= a
+\]
+\end{proof}
+
+En d'autres termes, il y a toujours le même angle $\theta$ entre deux points quelconques et leurs deux images : l'angle est une grandeur caractéristique de la similitude.
+
+\section{Écriture d'une similitude à centre comme composée de rotation et d'homothétie de même centre}
+
+Soit $f$ une similitude directe, s'écrivant $z\mapsto az+b$. Écrivons de plus $a$ sous forme exponentielle : $a=re^{i\theta}$. On peut évidemment écrire cette application comme la composée suivante:
+\[ z \mapsto e^{i\theta} z\mapsto re^{i\theta}z = az\mapsto az+b\]
+Autrement dit, on écrit $z\mapsto az+b$ comme la composée successive de trois applications : d'abord $z\mapsto e^{i\theta}z$ autrement dit la rotation de centre $0$ et d'angle $\theta$, suivie d'une homothetie $z\mapsto rz$ (toujours centrée sur l'origine), suivie d'une translation $z\mapsto z+b$.
+
+Cependant, cette décomposition n'est pas très satisfaisante, pour plusieurs raisons, en particulier parce qu'elle fait jouer un rôle spécial à l'origine alors que ce point n'a sans doute rien de particulier vis-à-vis de $f$.
+
+Il arrive qu'un point ait effectivement un rôle particulier : lorsque ce point est l'unique point fixe de $f$. On a aalors le résulatt de décomposition suivant :
+
+\begin{proposition}
+Soit $f$ une similitude directe à centre, c'est-à-dire une similitude directe admettant un unique point fixe que l'on note $\Omega$. Alors $f$ peut s'écrire comme la composée d'une rotation de centre $\Omega$ et d'une homothétie de centre $\Omega$.
+\end{proposition}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Action sur les points et sur les couples de points}
+
+\begin{proposition}
+Soient $M$ et $P$ deux points du plan. Alors il existe une similitude $f$ telle que $f(M)=P$. 
+\end{proposition}
+\begin{proof}
+On a déjà montré précédemment qu'il existe une infinité d'isométries directes ayant cet effet. Comme une isométrie est un cas particulier de similitude directes, ceci prouve le résultat.
+\end{proof}
+
+\begin{proposition}
+Soient $P$, $Q$, $R$ et $S$ quatre points du plan, d'affixes $p$, $q$, $r$ et $s$. Si $p\neq r$ et $q\neq s$, alors il existe une unique similitude directe $f : \mathcal P\to \mathcal P$ vérifiant
+\[ f(P)=Q \text{ et } f(R)=S\]
+\end{proposition}
+\begin{proof}
+Soit $f$ une similitude directe, que l'on écrit $z\mapsto az+b$ en coordonnée complexe. Les deux conditions $f(P)=Q \text{ et } f(R)=S$ correspondent au système d'équations
+\[ \left\{\begin{matrix}
+ap&+&b&=&q\\
+ar&+&b&=&s
+\end{matrix}\right.\]
+Dans ce système, les inconnues sont $a$ et $b$, et $p$, $q$, $r$ et $s$ sont des paramètres fixés par l'énoncé. On le résout par la méthode classique, par opérations sur les lignes. 
+\begin{enumerate}
+\item L'opération $L_2-L_1$ donne l'équation $a(r-p)=s-q$. Comme $r\neq p$, on en tire $a=\frac{s-q}{r-p}$.
+\item D'autre part l'opération $rL_1-pL_2$ donne l'équation $rb-pb=rq-ps$ et toujours comme $r-p\neq 0$, on obtient $b=\frac{rq-ps}{r-p}$.
+\end{enumerate}
+On obtient donc une solution unique $(a,b)$. Il reste à remarquer que comme $s\neq q$, la solution obtenue vérifie $a\neq 0$. Les paramètres $a$ et $b$ correspondent donc bien à une similitude directe.
+\end{proof}
+
+\begin{remarque}
+Il est contre-productif d'essayer de retenir par c\oe ur les deux formules qui donnent $a$ et $b$ en fonction des quatre autres paramètres. La probabilité de confondre les différents paramètres est trop haute. Il vaut mieux refaire le calcul à chaque fois.
+\end{remarque}
+
+\begin{exercice}
+Soient $A$, $B$, $C$ et $D$ les points d'affixes $a=1+i$, $b=2-i$, $c=3i$ et $d=-2+5i$.
+Déterminer la similitude directe qui envoie $A$ sur $D$ et $B$ sur $C$. (Attention à l'ordre et au nom des paramètres : écrire la similitude $z\mapsto \alpha z + \beta$ par exemple.)
+\end{exercice}
+

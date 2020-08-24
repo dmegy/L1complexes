@@ -1,0 +1,129 @@
+
+\begin{definition}
+Soit $z\in\C$.
+On appelle \emph{conjugué} de $z$ et on note $\overline z$ le nombre complexe $\Re(z) -i\Im(z)$.
+\end{definition}
+
+\begin{remarque}
+Définition équivalente, plus lourde mais plus concrète : Soit $z\in \C$ et soient $a$ et $b$ les réels tels que $z=a+ib$. Alors $\overline z := a-ib$. 
+\end{remarque}
+
+\begin{exemples}
+On a les égalités $\overline{5+3i}=5-3i$ et $\overline{-\sqrt 3-i\sqrt2}=-\sqrt 3+i\sqrt 2$. Remarquer aussi que $\overline 1=1$, $\overline 0 = 0$, et de façon générale, si $z$ est réel, $\overline z = z$.
+\end{exemples}
+
+\begin{definition}
+La \emph{conjugaison complexe} est l'application de $\C$ dans $\C$, qui à un complexe $z$ associe son conjugué $\overline z$.
+\end{definition}
+
+\begin{proposition}[La conjugaison est involutive]
+Appliquer deux fois successivement la conjugaison revient à ne rien faire du tout. En termes mathématiques:
+\[ \forall z\in\C, \overline{(\overline z)} = z\]
+On dit que la conjugaison est \emph{involutive}, ou bien que c'est une \emph{involution}.\footnote{De façon générale, si $f : E\to E$ est une application d'un ensemble dans lui-même, on dit que $f$ est involutive si $f\circ f=\Id_E$.}
+\end{proposition}
+
+Par exemple, si $z=-2+5i$, on a $\overline z = \overline{-2+5i} = -2-5i$, et 
+\[ \overline{\overline z} = \overline{-2-5i} = -2+5i = z.\]
+
+\begin{proposition}
+La conjugaison complexe est bijective.
+\end{proposition}
+\begin{proof}
+On peut le montrer directement, mais on peut le déduire de la proposition précédente\footnote{Cette preuve marche dans une situation plus générale : toute application involutive est automatiquement bijective, car elle est sa propre application réciproque.}. 
+\begin{enumerate}
+\item Preuve d'injectivité. Soient $z$ et $w$ des complexes tels que $\overline z = \overline w$. En conjugant une fois de plus on obtient $\overline{\overline z}=\overline{\overline w}$ c'est-à-dire par involutivité $z=w$. Ceci montre que la conjugaison est injective.
+\item Preuve de surjectivité. Soit $z\in\C$. D'après la propriété d'involutivité, on a $\overline{\left(\overline z\right)}=z$. Ceci montre que la conjugaison est surjective.
+\end{enumerate}
+\end{proof}
+
+
+Les règles de calcul utilisables lorsque l'on manipule la conjugaison sont résumés dans la proposition suivante : 
+
+\begin{proposition}[La conjugaison complexe est un automorphisme de corps]
+\begin{enumerate}
+\item La conjugaison est additive, ce qui signifie $\forall (z, z')\in \C^2, \overline{z+z'} = \overline{z}+\overline{z'}$. 
+\item La conjugaison est multiplicative, ce qui signifie $\forall (z,z')\in\C^2, \overline{zz'} = \overline{z}\cdot\overline{z'}$.
+\end{enumerate}
+On résume ces deux propriétés en disant que \og la conjugaison est un \emph{(auto)morphisme de corps}.\fg{}
+% 
+\end{proposition}
+
+\begin{remarque}
+Comparatif entre les deux rédactions d'additivité : la première rédaction nécessite d'introduire quatre nouveaux symboles ($a$, $a'$, $b$ et $b'$), ensuite il y a juste des calculs. La deuxième rédaction ne nécessite pas d'introduire des notations, elle n'utilise que la définition générale avec les parties réelles et imaginaires. Elle ne nécessite même pas de savoir exactement ce que sont les parties réelles et imaginaires, simplement de savoir qu'elles sont elles-mêmes additives. Remarquer aussi que les points communs entre la première démonstration et la démonstration d'additivité pour $\Re$ et $\Im$ à la section précédente : de fait, on refait un peu le même travail en double.
+\end{remarque}
+
+\begin{proof}
+\begin{enumerate}
+\item Voici deux rédactions possibles de l'additivité, l'une directe et un peu \og terre-à-terre\fg, l'autre réutilisant l'additivité de $\Re$ et $\Im$, qui a déjà été montrée plus haut.
+\begin{enumerate}
+\item Soient $z$ et $z'$ des nombres complexes, et soient $a+ib$ et $a'+ib'$ leur écriture cartésienne. Alors, on a 
+\begin{align*}
+\overline{z+z'} &= \overline{a+ib+a'+ib'}\\
+&= \overline{a+a'+i(b+b')} &\text{(Regroupement de termes)}\\
+&=a+a'-i(b+b')& \text{(Définition de la conjugaison)}\\
+&=(a-ib)+(a'-ib') & \text{(Regroupement de termes)}\\
+&= \overline{z}+\overline{z'}.
+\end{align*}
+\item Deuxième rédaction, un peu plus abstraite. Soient $z$ et $z'$ des nombres complexes. Alors, on a
+\begin{align*}
+\overline{z+z'} &= \Re(z+z')-i\Im(z+z') &\text{(Définition de la conjugaison)}\\
+&= \Re z+\Re z' -i\left(\Im z+\Im z'\right) & \text{(Additivité de $\Re$ et $\Im$)}\\
+&=\left(\Re z- i\Im z\right) + \left(\Re z'- i\Im z'\right) & \text{(Regroupement de termes)}\\
+&= \overline{z} + \overline{z'}. & \text{(Définition de la conjugaison)}
+\end{align*}
+\end{enumerate}
+
+\item Multiplicativité. Soient $z$ et $z'$ des nombres complexes, et soient $a+ib$ et $a'+ib'$ leur écriture cartésienne. Alors, d'une part on a :
+\begin{align*}
+\overline{zz'} &= \overline{(a+ib)(a'+ib')}\\
+&=\overline{aa'-bb'+i(ab'+ba')} & \text{(Calcul)}\\
+&=aa'-bb'-i(ab'+ba')& \text{(Définition de la conjugaison)}\\
+\end{align*}
+Et d'autre part, on a 
+\begin{align*}
+\overline{z}\cdot \overline{z'} &= \overline{a+ib}\cdot \overline{a'+ib'}\\
+&=(a-ib)(a'-ib')& \text{(Définition de la conjugaison)}\\
+&=aa'-bb'-i(ab'+ba') & \text{(Calcul)}
+\end{align*}
+On en déduit que l'on a bien $\overline{zz'} = \overline{z}\cdot\overline{z'}$.
+\end{enumerate}
+\end{proof}
+
+
+
+\begin{remarque}
+Les propriétés d'additivité et de multiplicativité sont parfois invoquées par les slogans \og la conjugaison est compatible à la somme\fg{} ou \og le conjugué de la somme est égal à la somme des conjugués\fg{} pour l'additivité, et \og la conjugaison est compatible au produit\fg{} ou \og le conjugué d'un produit est égal au produit des conjugués\fg{} pour la multiplicativité. Cela dit, le terme \og compatible\fg{} n'est pas ce qu'il y a de plus précis, il vaut mieux l'éviter. Dans toute la suite, on utilisera les termes \og additif\fg{} et \og multiplicatif\fg, et \og automorphisme de corps\fg{} pour la conjonction des deux.
+\end{remarque}
+
+Comme conséquence immédiate, nous avons la
+
+\begin{proposition}[Conjuguaison d'inverses et puissances]
+\begin{enumerate}
+\item Soit $z\in\C^*$. Alors $\overline{\left(\frac{1}{z}\right)} = \frac{1}{\overline z}$.
+\item Soit $z\in\C$. Alors $\forall n\in\N, \overline{z}^n = \overline{z^n}$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+\begin{enumerate}
+\item On utilise la multiplicativité de la conjugaison. Comme $\frac1z\cdot z=1$, en prenant les conjugués on obtient
+\[ \overline{\frac1z\cdot z} = \overline{\left(\frac1z\right)}\cdot \overline{z} = \overline 1 = 1,\]
+d'où on déduit que \[ \frac{1}{\overline z} = \overline{\left(\frac1z\right)}.\]
+\item Même si la proposition a l'air évidente, il faut la démontrer. On le fait par récurrence. Pour tou entier naturel $n$, notons $A(n)$ l'assertion \og $\overline{z}^n = \overline{z^n}$\fg. Comme $\overline{z}^0=1=\overline{z^0}$, l'assertion $A(0)$ est vraie. Soit maintenant $n\in\N$, et supposons que $A(n)$ soit vraie. Alors on a 
+\begin{align*}
+\overline{z}^{n+1}
+&=\overline{z}^{n}\cdot\overline{z} \quad \text{par multiplicativité}\\
+&=\overline{z^n}\cdot \overline{z} \quad \text{par hypothèse de récurrence}\\
+&=\overline{z^n\cdot z} \quad \text{par multiplicativité}\\
+&=\overline{z^{n+1}}
+\end{align*}
+Donc $A(n+1)$ est vraie, ce qui conclut d'après le principe de récurrence.
+\end{enumerate}
+\end{proof}
+
+
+\begin{proposition}
+Soient $z, z' \in \C, \lambda\in\R$. Alors
+\[z\in\R \Leftrightarrow z=\overline z,\quad z\in i\R \Leftrightarrow z=-\overline{z},\]
+\[\Re(z) = \frac{z+\overline z}{2},\quad \Im(z) = \frac{z-\overline z}{2i}.\]
+\end{proposition}
