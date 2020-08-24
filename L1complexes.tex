@@ -108,12 +108,12 @@
 \newtheorem{attention}[theoreme]{Mise en garde}
 \theoremstyle{plain}
 %\newtheorem{rmq}[theoreme]{Remarque}
-\newtheorem{exercice}[theoreme]{Exercice}
+\newtheorem{exercice}[theoreme]{Exercice}% on laisse pour ne pas casser le code existant
 
 \NewEnviron{remarque}{%
   \marginpar{\begin{mdframed}\footnotesize{\textbf{Remarque:} \BODY}\end{mdframed}}%
 }
-\NewEnviron{exomarge}{%
+\NewEnviron{exo}{%
   \marginpar{\begin{mdframed}\footnotesize{\textbf{Exercice:} \BODY}\end{mdframed}}%
 }
 \NewEnviron{methode}{%
@@ -248,7 +248,10 @@ En informatique, l'égalité et l'affectation ont des symboles différents (en g
 \label{sec:exp}
 \input{chapitres/exponentielle.tex}
 
-\section{Trigonométrie (vide)}
+
+\section{Trigonométrie}
+\label{sec:trigo}
+\input{chapitres/trigo.tex}
 
 
 \section{Racines de l'unité}
