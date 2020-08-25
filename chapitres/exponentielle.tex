@@ -1,24 +1,33 @@
 On suppose connues les fonctions trigonométriques $\cos$ et $\sin$, ainsi que l'exponentielle réelle $x\mapsto e^x$, ainsi que leurs propriétés, notamment les formules de trigonométrie pour $\cos(a+b)$ et $\sin(a+b)$, ainsi que les propriétés de l'exponentielle réelle : stricte croissance sur $\R$, jamais nulle, surjective sur $\R_+^*$.
 
+\begin{remarque}
+Au lycée, on fait passer l'idée du cosinus et du sinus en disant que l'on \og enroule l'axe réel sur le cercle trigonométrique\fg, comme on enroulerait une ficelle sur une bobine. C'est une très bonne façon d'expliquer, qui remplit son objectif, mais \og enrouler\fg{} n'est pas vraiment un terme mathématique...
+\end{remarque}
+
 \begin{mdframed}
 Attention : la construction rigoureuse de ces fonctions n'a a priori pas encore été faite ! Il serait en théorie possible de la faire ici, mais il faudrait plusieurs chapitres du cours d'analyse, et ce serait contre-productif d'un point de vue pédagogique.
 
 Le fait d'admettre l'existence et les propriétés classiques de ces fonctions ne crée pas de trou logique dans la suite. Tout ce qui a été admis pourra être démontré au second semestre sans utiliser le cours sur les nombres complexes, il n'y pas de cercle vicieux.
 \end{mdframed}
 
+
+
 \begin{definition}
 Soit $z \in \C$, $a = Re(z)$ et $b = Im(z)$. Alors, on définit la fonction $exp : \C\to \C$ par $exp(z) = e^a (\cos(b)+i \sin(b))$. On écrit la plupart du temps $e^z$ au lieu de $exp(z)$, pour des raisons qui apparaitront plus bas.
 \end{definition}
 
-Tout de suite, quelques exemples:
 
 \begin{exemples}
 $e^0=1$, $e^{i\pi/2} = i$, $e^{i\pi}=-1$, $e^{3i\pi/2}=-i$ et $e^{2i\pi}=1$. 
 \end{exemples}
 
-\begin{mdframed}
-En particulier l'exponentielle complexe n'est \textbf{pas injective} à la différence de l'exponentielle réelle.
-\end{mdframed}
+\begin{attention}
+L'exponentielle complexe est une fonction de $\C$ dans $\C$, donc ça n'a aucun sens de dire qu'elle est \og strictement croissante\fg, ou encore \og strictement positive\fg. 
+\end{attention}
+\begin{exo}
+Montrer que l'exponentielle complexe n'est pas injective, à la différence de l'exponentielle réelle.
+\end{exo}
+
 
 \begin{proposition}
 L'exponentielle complexe vérifie les propriétés fondamentales suivantes:
@@ -67,7 +76,9 @@ e^z = e^{z'} & \Leftrightarrow e^{z-z'} = 1\\
 
 
 On a vu plus haut que l'exponentielle complexe n'est pas injective. Comme elle ne s'annule jamais, elle n'est pas surjective sur $\C$. Cependant, elle l'est en corestriction à $\C^*$, c'est-à-dire que tout complexe non nul possède un antécédent par l'exponentielle complexe:
+
 \begin{proposition}
+L'image de l'exponentielle complexe est $\C^*$ :
 \[ \forall w\in\C^*, \exists z\in\C, e^z=w\]
 \end{proposition}
 \begin{proof}
@@ -82,3 +93,4 @@ Pas plus qu'il n'existe de fonction \og racine carrée complexe\fg{} raisonnable
 
 Jusqu'à ce moment, en aucun cas vous ne pouvez prendre le \og logarithme\fg{} d'un nombre complexe. Les notations $\log$ ou $\ln$ ne sont valides que devant un nombre réel strictement positif, la règle est toujours la même.
 \end{mdframed}
+

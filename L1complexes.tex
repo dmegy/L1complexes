@@ -105,19 +105,29 @@
 
 \newtheorem{exemple}[theoreme]{Exemple}
 \newtheorem{exemples}[theoreme]{Exemples}
-\newtheorem{attention}[theoreme]{Mise en garde}
+
+\newtheorem{att}[theoreme]{Mise en garde}
+
+\NewEnviron{attention}{%
+  %\par%
+  %\reversemarginpar%
+  \begin{att}\marginpar{\fbox{{\Huge !}}}{} \BODY \end{att}%
+  %\par%
+  %\normalmarginpar%
+}
+
 \theoremstyle{plain}
 %\newtheorem{rmq}[theoreme]{Remarque}
 \newtheorem{exercice}[theoreme]{Exercice}% on laisse pour ne pas casser le code existant
 
 \NewEnviron{remarque}{%
-  \marginpar{\begin{mdframed}\footnotesize{\textbf{Remarque:} \BODY}\end{mdframed}}%
+  \marginpar{\begin{mdframed}\footnotesize{\textbf{Remarque.} \BODY}\end{mdframed}}%
 }
 \NewEnviron{exo}{%
-  \marginpar{\begin{mdframed}\footnotesize{\textbf{Exercice:} \BODY}\end{mdframed}}%
+  \marginpar{\begin{mdframed}\footnotesize{\textbf{Exercice.} \BODY}\end{mdframed}}%
 }
 \NewEnviron{methode}{%
-  \marginpar{\begin{mdframed}\footnotesize{\textbf{Méthode:} \BODY}\end{mdframed}}%
+  \marginpar{\begin{mdframed}\footnotesize{\textbf{Méthode.} \BODY}\end{mdframed}}%
 }
 
 
@@ -188,6 +198,7 @@ La page arche contient les feuilles de TD, les dernières avec corrections. Il y
 \subsection{Comment lire ce texte}
 
 Ce document ne prétend pas remplacer le cours au tableau, ni un livre de cours sur les nombres complexes et la géométrie plane. Il sert d'autres objectifs :
+
 
 
 \begin{enumerate}

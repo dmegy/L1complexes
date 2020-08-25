@@ -29,7 +29,7 @@ Heureusement, pour les nombres complexes, la construction est possible !
 \end{mdframed}
 
 
-Il existe plusieurs manières de construire les nombres complexes, qui ont toutes leur intérêt. La plus courante au niveau Terminale/L1 depuis une trentaine d'années\footnote{Auparavant, on utilisait des matrices, mais ça suppose de connaître le produit matriciel et d'être à l'aise en algèbre. Cette construction n'est plus adaptée aux programmes actuels. La méthode actuelle est plus simple et au bout du compte équivalente. Son seul défaut est de \og parachuter\fg{} la formule du produit sans trop expliquer d'où ça vient.} consiste à utiliser des couples de réels.
+Il existe plusieurs manières de construire les nombres complexes, qui ont toutes leur intérêt. La plus courante au niveau Terminale/L1 depuis une trentaine d'années\footnote{Auparavant, on utilisait des matrices, mais ça suppose de connaître le produit matriciel et d'être à l'aise en algèbre. Cette construction n'est plus adaptée aux programmes actuels. La méthode actuelle est plus simple et au bout du compte équivalente. Son seul défaut est de \og parachuter\fg{} la formule du produit sans trop expliquer d'où elle provient.} consiste à utiliser des couples de réels.
 
 \paragraph{Construction}
 
@@ -55,7 +55,10 @@ L'application partie réelle $\Re : \C\to \R, z\mapsto \Re z$ est-elle injective
 \end{exo}
 
 \begin{proposition}[Additivité]
-Les applications $\Re$ et $\Im$ sont additives.
+Les applications $\Re$ et $\Im$ sont additives, ce qui signifie:
+\[ \forall (z, w)\in\C^2, \Re(z+w)=\Re z + \Re w\]
+et
+\[ \forall (z, w)\in\C^2, \Im(z+w)=\Im z + \Im w\]
 \end{proposition}
 \begin{proof}
 Exercice.
@@ -73,10 +76,13 @@ Autrement dit, on peut \og sortir la somme \fg{} d'une partie réelle ou d'une p
 Exercice. (Récurrence, en utilisant la proposition précédente (additivité) pour prouver l'hérédité.)
 \end{proof}
 
-\begin{proposition}[Homogénéité]
-Les applications $\Re$ et $\Im$ sont homogènes, ce qui signifie la chose suivante:
+\begin{proposition}[$\R$-homogénéité]
+Les applications $\Re$ et $\Im$ sont $\R$-homogènes, ce qui signifie la chose suivante:
 \[ \forall z\in\C, \forall \lambda\in \R, \begin{cases}\Re(\lambda z)=\lambda \Re z\\ \Im(\lambda z) = \lambda \Im z\end{cases}\]
 \end{proposition}
+\begin{remarque}
+Le \og $\R$\fg{} dans \og $\R$-homogène\fg{} se rapport au fait que dans la définition, $\lambda$ est réel.
+\end{remarque}
 
 % éventuellement mettre en remarque l'homogénéité de degré supérieur ?
 % par exemple https://fr.wikipedia.org/wiki/Fonction_homog%C3%A8ne
@@ -86,7 +92,7 @@ On a par exemple $\Re(3z)=3\Re z$, $\Im\left(\frac{2z}{\sqrt 3}\right) = \frac{2
 \end{exemple}
 
 \begin{attention}
-Dans la propriété d'homogénéité, $\lambda$ doit être réel, et non complexe, sinon ça ne marche en général pas. C'est pour cela que l'on écrit parfois \og $\R$-homogène\fg{} au lieu de simplement \og homogène\fg.
+Dans la propriété d'homogénéité, $\lambda$ doit être réel, et non complexe, sinon ce n'est pas toujours vrai.  C'est pour cela que l'on précise \og $\R$-homogène\fg{} au lieu d'écrire simplement \og homogène\fg.
 \end{attention}
 
 \begin{exo}
@@ -108,7 +114,7 @@ et
 \end{multline*}
 \end{exo}
 
-Le fait d'avoir à la fois l'homogénéité et l'additivité porte un nom spécial : la $\R$-linéarité. En général, cette propriété est formulée de la façon suivante.
+Le fait d'avoir à la fois la $\R$-homogénéité et l'additivité porte un nom spécial : la \underline{$\R$-linéarité}. En général, cette propriété est formulée de la façon suivante.
 
 \begin{proposition}
 Les applications $\Re$ et $\Im$ sont $\R$-linéaires, ce qui signifie
@@ -125,7 +131,7 @@ La même preuve marche pour la partie imaginaire.
 \end{proof}
 
 \begin{mdframed}
-Les propriétés d'additivité et de $\R$-linéarité sont exrêmement importantes, et vous les recroiserez à d'innombrables reprises les prochains mois (en particulier dans le cours d'algèbre linéaire). C'est une bonne chose de commencer à rencontrer ce mot assez tôt, et à apprendre tout doucement à utiliser la notion.
+La notion de $\R$-linéarité est centrale en mathématiques, et vous la recroiserez à d'innombrables reprises les prochains mois (en particulier dans le cours d'algèbre linéaire). C'est une bonne chose de commencer à rencontrer ce mot assez tôt, et à apprendre tout doucement à utiliser la notion.
 \end{mdframed}
 
 La $\R$-linéairité a la conséquence suivante :

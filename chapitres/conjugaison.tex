@@ -39,12 +39,14 @@ On peut le montrer directement, mais on peut le déduire de la proposition préc
 
 Les règles de calcul utilisables lorsque l'on manipule la conjugaison sont résumés dans la proposition suivante : 
 
-\begin{proposition}[La conjugaison complexe est un automorphisme de corps]
+\begin{proposition}[Automorphisme de corps]
+La conjugaison vérifie les deux propriétés suivantes:
 \begin{enumerate}
-\item La conjugaison est additive, ce qui signifie $\forall (z, z')\in \C^2, \overline{z+z'} = \overline{z}+\overline{z'}$. 
-\item La conjugaison est multiplicative, ce qui signifie $\forall (z,z')\in\C^2, \overline{zz'} = \overline{z}\cdot\overline{z'}$.
+\item Additivité :  $\forall (z, z')\in \C^2, \overline{z+z'} = \overline{z}+\overline{z'}$. 
+\item Multiplicativité :  $\forall (z,z')\in\C^2, \overline{zz'} = \overline{z}\cdot\overline{z'}$.
 \end{enumerate}
-On résume ces deux propriétés en disant que \og la conjugaison est un \emph{(auto)morphisme de corps}.\fg{}
+On résume ces deux propriétés en écrivant:\\
+\og la conjugaison est un \emph{(auto)morphisme de corps}.\fg{}
 % 
 \end{proposition}
 
@@ -54,26 +56,26 @@ Comparatif entre les deux rédactions d'additivité : la première rédaction n�
 
 \begin{proof}
 \begin{enumerate}
-\item Voici deux rédactions possibles de l'additivité, l'une directe et un peu \og terre-à-terre\fg, l'autre réutilisant l'additivité de $\Re$ et $\Im$, qui a déjà été montrée plus haut.
+\item \textbf{Preuve de l'additivité.} Voici deux rédactions possibles, l'une directe et un peu \og terre-à-terre\fg, l'autre réutilisant l'additivité de $\Re$ et $\Im$, qui a déjà été montrée plus haut.
 \begin{enumerate}
-\item Soient $z$ et $z'$ des nombres complexes, et soient $a+ib$ et $a'+ib'$ leur écriture cartésienne. Alors, on a 
+\item Soient $z$ et $z'$ des nombres complexes, et soient $a+ib$ et $a'+ib'$ leur forme algébrique. Alors, on a 
 \begin{align*}
-\overline{z+z'} &= \overline{a+ib+a'+ib'}\\
+\overline{z+z'} &= \overline{a+ib+a'+ib'} & \text{(écriture explicite)}\\
 &= \overline{a+a'+i(b+b')} &\text{(Regroupement de termes)}\\
-&=a+a'-i(b+b')& \text{(Définition de la conjugaison)}\\
+&=a+a'-i(b+b')& \text{(Définition avec forme explicite)}\\
 &=(a-ib)+(a'-ib') & \text{(Regroupement de termes)}\\
 &= \overline{z}+\overline{z'}.
 \end{align*}
 \item Deuxième rédaction, un peu plus abstraite. Soient $z$ et $z'$ des nombres complexes. Alors, on a
 \begin{align*}
-\overline{z+z'} &= \Re(z+z')-i\Im(z+z') &\text{(Définition de la conjugaison)}\\
+\overline{z+z'} &= \Re(z+z')-i\Im(z+z') &\text{(Définition)}\\
 &= \Re z+\Re z' -i\left(\Im z+\Im z'\right) & \text{(Additivité de $\Re$ et $\Im$)}\\
 &=\left(\Re z- i\Im z\right) + \left(\Re z'- i\Im z'\right) & \text{(Regroupement de termes)}\\
 &= \overline{z} + \overline{z'}. & \text{(Définition de la conjugaison)}
 \end{align*}
 \end{enumerate}
 
-\item Multiplicativité. Soient $z$ et $z'$ des nombres complexes, et soient $a+ib$ et $a'+ib'$ leur écriture cartésienne. Alors, d'une part on a :
+\item \textbf{Preuve de la multiplicativité.} Soient $z$ et $z'$ des nombres complexes, et soient $a+ib$ et $a'+ib'$ leur écriture cartésienne. Alors, d'une part on a :
 \begin{align*}
 \overline{zz'} &= \overline{(a+ib)(a'+ib')}\\
 &=\overline{aa'-bb'+i(ab'+ba')} & \text{(Calcul)}\\
@@ -122,8 +124,11 @@ Donc $A(n+1)$ est vraie, ce qui conclut d'après le principe de récurrence.
 \end{proof}
 
 
-\begin{proposition}
-Soient $z, z' \in \C, \lambda\in\R$. Alors
-\[z\in\R \Leftrightarrow z=\overline z,\quad z\in i\R \Leftrightarrow z=-\overline{z},\]
-\[\Re(z) = \frac{z+\overline z}{2},\quad \Im(z) = \frac{z-\overline z}{2i}.\]
-\end{proposition}
+\begin{exo}
+Soient $z, z' \in \C, \lambda\in\R$. Montrer
+\[z\in\R \Leftrightarrow z=\overline z\]
+\[z\in i\R \Leftrightarrow z=-\overline{z}\]
+\[\Re(z) = \frac{z+\overline z}{2}\]
+\[\Im(z) = \frac{z-\overline z}{2i}.\]
+Ceci sera utilisé en permanence.
+\end{exo}
