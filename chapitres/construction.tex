@@ -31,7 +31,70 @@ Heureusement, pour les nombres complexes, la construction est possible !
 
 Il existe plusieurs manières de construire les nombres complexes, qui ont toutes leur intérêt. La plus courante au niveau Terminale/L1 depuis une trentaine d'années\footnote{Auparavant, on utilisait des matrices, mais ça suppose de connaître le produit matriciel et d'être à l'aise en algèbre. Cette construction n'est plus adaptée aux programmes actuels. La méthode actuelle est plus simple et au bout du compte équivalente. Son seul défaut est de \og parachuter\fg{} la formule du produit sans trop expliquer d'où elle provient.} consiste à utiliser des couples de réels.
 
-\paragraph{Construction}
+
+
+
+\paragraph{Construction via les couples de réels}
+
+La construction que l'on choisit de présenter est celle utilisant des couples de réels :
+
+\begin{definition}
+Un nombre complexe est un couple de nombres réels. L'ensemble des nombres complexes, noté $\C$, est donc par définition l'ensemble $\R^2$.
+\end{definition}
+
+Dans cette définition, un nombre complexe est donc par définition un couple $(a,b)$ de réels.
+
+Si on munit le plan d'un repère, on peut donc identifier les nombres complexes aux point du plan, via les coordonnées. C'est de cette façon qu'il faut visualiser les nombres complexes.
+
+ Il reste à définir ce que signifie la somme et le produit dans ce contexte.
+
+\begin{definition}
+Soient $z=(x,y)$ et $z'=(x',y')$ deux nombres complexes. 
+\begin{enumerate}
+\item Leur somme, notée $z+z'$, est par définition le couple $(x+x',y+y')$. Autrement dit, c'est l'addition usuelle de $\R^2$, que l'on utilise pour additionner des coordonnées de vecteurs par exemple.
+\item Leur produit, noté $z\times z'$, ou bien $z\cdot z'$, ou encore simplement $zz'$, est par définition le couple
+\[ (xx'-yy', xy'+yx')\]
+\end{enumerate}
+\end{definition}
+
+Noter que la définition du produit est un peu compliquée et qu'on ne voit pas au premier abord la raison pour laquelle on la définit de cette manière\footnote{Il y a un lien avec les formules
+\[ \cos(a+b)=\underbrace{\cos a\cos b - \sin a \sin b}_{xx'-yy'}\]
+et 
+\[ \sin(a+b) = \underbrace{\cos a \sin b + \sin a \cos b}_{xy'+yx'},\]
+que vous connaissez normalement par c\oe ur.}.
+
+\begin{remarque}
+La tentation était grande de définir le produit comme $(aa', bb')$. Mais si on suit cette idée, tout ne se passe pas  comme prévu. Certaines choses marchent mais on perd beaucoup de propriétés dont la possibilité de diviser. En fait, on obtient dans ce cas quelque chose appelé \emph{l'anneau produit} : voir cours de L2/L3.
+\end{remarque}
+
+\begin{definition}
+Soit $z=(a,b)$ un nombre complexe. Sa partie réelle, notée $\Re z$, est le réel $a$. Sa partie imaginaire, notée $\Im z$, est le réel $b$. Ce sont les deux coordonnées.
+\end{definition}
+
+Nous allons noter temporairement $\mathbf{0}$ le nombre complexe $(0,0)$ et $\mathbf{1}$ le nombre complexe $(1,0)$. Les caractères gras sont utilisés pour distinguer ces objets de $0\in\R$ et $1\in \R$, puisque pour l'instant, ce sont des objets différents. (Plus tard, on expliquera pour quelles raisons on peut oublier cette différence.)
+
+Après avoir défini les nombres complexes, leur somme et leur produit, il reste à s'assurer que tout se passe comme prévu. C'est l'objet de la proposition suivante.
+
+\begin{proposition}
+Soient $z$, $z'$ et $z''$ des nombres complexes.
+\begin{align*}
+z+z' &= z'+z\\
+z &= z+\mathbf{0}\\
+z\cdot z'&=z'\cdot z\\
+z &= z\cdot \mathbf{1}\\
+z(z'+z'') &= zz'+zz''\\
+\end{align*}
+\end{proposition}
+
+\begin{proof}
+Exercice.
+\end{proof}
+
+
+
+
+
+
 
 
 
