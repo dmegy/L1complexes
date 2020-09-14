@@ -230,6 +230,7 @@ Cependant, comme le cours sur les polynômes n'est pas supposé connu à ce stad
 
 
 \begin{proposition}
+\label{prop:gen_U_n}
 Soit $n\in\N^*$. Alors on a
 \[ \U_n = \ensemble{e^{2ik\pi/n}}{k\in \llbracket 0,n-1\rrbracket}\]
 \end{proposition}
@@ -272,11 +273,11 @@ Les éléments de $\U_n$ sont les affixes d'un polygone régulier à $n$ côtés
 
 \subsection{Compléments : générateurs et racines primitives}
 
-Dans toute cette section, $n$ désigne un entier naturel non nul.
+Dans toute cette section, $n$ désigne un entier naturel non nul. L'idée qui se cache derrière la proposition \ref{prop:gen_U_n} ainsi que derrière la preuve à coup de somme géométrique est celle de \emph{générateur}. Le paragraphe qui suit explique cette idée.
 
 \begin{definition}
 Soit $a\in\C$. On dit que $a$ est un \emph{générateur} de $\U_n$ si
-\[ \U_n = \ensemble{a^n}{n\in\Z}\]
+\[ \U_n = \ensemble{a^k}{k\in\Z}\]
 \end{definition}
 
 Autrement dit, si $\U_n$ est égal à l'ensemble $\set{\cdots , a^{-2}, a^{-1}, a^0=1, a, a^2, a^3, \cdots}$. En particulier, $a$ doit forcément appartenir à $\U_n$ pour en être un générateur. Remarquer aussi que $1$ n'est jamais un générateur de $\U_n$, sauf si $n=1$.
@@ -285,7 +286,7 @@ Autrement dit, si $\U_n$ est égal à l'ensemble $\set{\cdots , a^{-2}, a^{-1}, 
 Le nombre complexe $e^{2i\pi/n}$ est un générateur de $\U_n$.
 \end{proposition}
 \begin{proof}
-Dire que $e^{2i\pi/n}$ est un générateur de $\U_n$, c'est dire que $\U_n=\ensemble{e^{2ik\pi/n}}{k\in \Z}$ et c'est ce que l'on a montré plus haut.
+Dire que $e^{2i\pi/n}$ est un générateur de $\U_n$, c'est dire que $\U_n=\ensemble{e^{2ik\pi/n}}{k\in \Z}$. Cette proposition est donc une reformulation de la proposition \ref{prop:gen_U_n}.
 \end{proof}
 
 \begin{exemples}
