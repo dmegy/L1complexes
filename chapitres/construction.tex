@@ -93,8 +93,46 @@ Exercice.
 
 
 
+\paragraph{Injection canonique de $\R$ dans $\C$}
+
+Vu la construction de $\C$ qui a été donnée, les nombres réels ne forment pas u sous-ensemble des nombres complexes car il y a un problème de type : un nombre réel est un couple de réels ont un type différent. Il y a une façon \og d'inclure \fg{} les réels dans les complexes, de façon compatible aux opérations arithmétiques. Ce paragraphe explique cela.
+
+Soit $\phi : \R\to \C, x\mapsto (x,0)$. On l'appelle l'injection canonique de $\R$ dans $\C$.
+
+\begin{proposition}
+Soient $x$ et $y$ des réels. Alors :
+\begin{enumerate}
+\item Additivité : $\phi(x+y)=\phi(x)+\phi(y)$.
+\item Multiplicativité : $\phi(x\times y) = \phi(x)\times \phi(y)$.
+\end{enumerate}
+\end{proposition}
+\begin{exo}
+L'additivité entraîne automatiquement $\phi(0)=\mathbf 0$ et la multiplicativité entraîne automatiquement $\phi(1)=\mathbf 1$.
+\end{exo}
+\begin{proof}
+Exercice.
+\end{proof}
 
 
+\paragraph{Forme algébrique d'un nombre complexe}
+
+Les propriétés de l'addition et de la multiplication complexe d'une part, et celles de l'injection canonique d'autre part (c'est-à-dire l'identification de $\R$ à une partie de $\C$), permettent de calculer très facilement avec les complexes. 
+
+Si $z=(x,y) \in \C$ est un nombre complexe, on peut écrire:
+\begin{align*}
+ z 
+&=(x,0)+(0,y) \\
+&=(x,0)+(y,0)\times (0,1)\\
+&= \phi(x) + \phi(y) \times i
+\end{align*}
+Ou, de manière plus compacte, en identifiant les réels $x$ et $y$ et les complexes $\phi(x)$ et $\phi(y)$ qui leur correspondent :
+\[ \boxed{z=x+iy}\]
+
+\begin{mdframed}[linewidth=2pt]
+C'est la \emph{forme algébrique} du nombre complexe $z$, et dorénavant on n'utilisera que cette forme, et non la forme \og couple\fg.
+
+On identifiera également systématiquement un nombre réel à son image canonique par $\phi$ dans $\C$, on écrira que $\R \subseteq \C$, et on n'écrira donc plys l'application $\phi$ nulle part.
+\end{mdframed}
 
 
 
