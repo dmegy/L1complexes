@@ -3,9 +3,28 @@ Soit $\alpha\in\C$.
 Considérons l'équation $z^2=\alpha$, d'inconnue $z\in\C$.
 \begin{enumerate}
 \item Si $\alpha=0$, l'équation admet une unique solution, la solution nulle.
-\item Si $\alpha\neq 0$, l'équation admet deux solutions distinctes, appelées \emph{racines carrées complexes de $\alpha$}.
+\item Si $\alpha\neq 0$, l'équation admet deux solutions distinctes, appelées \emph{racines carrées complexes\footnote{Ne PAS utiliser le symbole $\sqrt{\phantom{aa}}$, voir avertissement plus bas.} de $\alpha$}.
 \end{enumerate}
 \end{proposition}
+
+\begin{proof}
+\begin{enumerate}
+\item Soit $z\in \C$. Si $z^2=0$, alors $z=0$. (Peut sembler évident mais attention aux pièges\footnote{On ne peut évidemment pas jutifier cela en \og passant à la racine carrée\fg{} come on le ferait sur $\R$ : il n'y a pas d'application racine carrée définie sur les nombres complexes, voir avertissement plus bas}... Preuve 1 : on a $z\times z=0$ donc un des deux facteurs est nul, et donc $z=0$. Preuve 2 : par l'absurde, si $z$ était non nul, il aurait un inverse noté $z^{-1}$, on pourrait alors multiplier l'équation $z^2=0$ par $z^{-2}$ et on obtiendrait $0=1$, absurde. Preuve 3 : si $z^2=0$, alors en prenant le module $0=\abs{z^2}=|z|^2$ donc\footnote{Si vous flairez un cercle vicieux ici c'est bien, vous êtes attentifs. Mais on admet que le résultat sur $\R$ est, lui, connu.} $|z|=0$ donc $z=0$.)
+\item Si $\alpha\neq 0$, la situation est un peu plus délicate. Soit $z\in \C$ et soient $x$ et $y$ ses parties réelles et imaginaires. Notons également $a$ et $b$ les parties réelles et imaginaires de $\alpha$, qui vérifient donc $(a,b)\neq (0,0)$. On a 
+\[ z^2=\alpha \iff x^2-y^2+2ixy=a+ib\]
+En identifiant les parties réelles et imaginaires, on obtient
+\[ z^2=\alpha \iff \begin{cases}x^2-y^2 &= a \\ 2xy&=b\end{cases}\]
+Ce système de deux équations à deux inconnues $x$ et $y$ n'est pas linéaire en $x$ et $y$ et  n'est donc pas trivial à résoudre. Il est préférable d'exploiter en plus l'égalité des modules des deux membres de l'équation complexe. 
+En prenant en effet le module  des membres de $z^2=\alpha$, on obtient $\abs{z^2}=\abs{\alpha}$ c'est-à-dire $x^2+y^2=|\alpha|$. Finalement, nous avons donc l'équivalence :
+\[ z^2=\alpha \iff \begin{cases}x^2+y^2 &= |\alpha| \\ x^2-y^2 &= a \\ 2xy &= b\end{cases}\]
+Les deux premières équations de ce système sont liénaires en $x^2$ et $y^2$ et ce système admet une solution unique pour le couple $(x^2,y^2)$, ce qui donne potentiellement jusqu'à quatre solutions possibles pour le couple $(x,y)$.
+
+La dernière équation $2xy=b$ permet alors de ne garder que deux solutions pour le couple $(x,y)$, car elle fixe le signe de $xy$.
+\end{enumerate}
+\end{proof}
+
+On ne donne pas la formule générale à dessein : d'une part il est inutile de la retenir, d'autre part il faut avant tout s'exercer sur des exemples, plus ou moins simples. Ceux faits en cours et TD sont simples, mais il est recommandé de résoudre ensuite l'équation $z^2=1+i$, ce qui donne des radicaux imbriqués.\footnote{Evidemment, si au cours d'un calcul on obtient des expressions vraiment très compliquées, le premier réflexe doit être de vérifier les calculs précédents.}
+
 
 \begin{attention}
 On n'utilise pas le symbole $\sqrt{\phantom{aa}}$ pour écrire les racines carrées complexes. Jusqu'à nouvel ordre, le symbole $\sqrt{\phantom{aa}}$ ne peut s'utiliser que sur un \textbf{réel positif}. Toute mauvaise utilisation de ce symbole entraînera une perte très importante de points aux examens.
