@@ -13,7 +13,9 @@ Le fait d'admettre l'existence et les propriétés classiques de ces fonctions n
 
 
 \begin{definition}
-Soit $z \in \C$, $a = Re(z)$ et $b = Im(z)$. Alors, on définit la fonction $exp : \C\to \C$ par $exp(z) = e^a (\cos(b)+i \sin(b))$. On écrit la plupart du temps $e^z$ au lieu de $exp(z)$, pour des raisons qui apparaitront plus bas.
+Soit $z \in \C$, $a = Re(z)$ et $b = Im(z)$. Alors, on définit la fonction $exp : \C\to \C$ par $exp(z) = e^a (\cos(b)+i \sin(b))$.
+
+On écrit la plupart du temps $e^z$ au lieu de $exp(z)$, pour des raisons qui apparaitront plus bas.
 \end{definition}
 
 
@@ -46,14 +48,17 @@ L'exponentielle complexe vérifie également un certain nombre d'autres proprié
 
 \begin{proposition}
 \begin{enumerate}
-\item $\forall z\in\C, \forall n\in \Z, \left(e^z\right)^n = e^{nz}$ (et on n'élève \underline{jamais} un complexe à une puissance non entière!);
+\item $\forall z\in\C, \forall n\in \N, \left(e^z\right)^n = e^{nz}$.
+\item Plus généralement, $\forall z\in\C, \forall n\in \Z, \left(e^z\right)^n = e^{nz}$ (et on n'élève \underline{jamais} un complexe à une puissance non entière!);
 \item $\forall z\in\C, e^{\overline{z}} = \overline{e^z}$;
 \end{enumerate}
 \end{proposition}
 
 \begin{proof}
 \begin{enumerate}
-\item Récurrence immédiate en utilisant les propriétés précédentes.
+\item On prouve l'assertion récurrence sur $n\in\N$ en utilisant les propriétés précédentes.
+\item Si $n\in \Z$ est négatif, alors on a $\left(e^z\right)^n = \left(\frac{1}{e^{z}}\right)^{-n} = \left(e^{-z}\right)^{-n}$ et $-n$ est un entier positif. D'après le cas précédent, on a donc
+\[ \left(e^{-z}\right)^{-n} = e^{(-z)(-n)} = e^{nz}\]
 \item Définition, ou simple conséquence de la proposition :  
 \[ e^z\overline{e^z}=\abs{e^z}^2=\left(e^{\Re(z)}\right)^2 = e^{2\Re(z)}, \]
 ce qui donne $\overline{e^z}=e^{2\Re(z)-z} = e^{\overline z}$.
@@ -62,15 +67,15 @@ ce qui donne $\overline{e^z}=e^{2\Re(z)-z} = e^{\overline z}$.
 
 \begin{proposition}
 Soient $z$ et $z'$ des complexes. Alors
-\[e^z = e^{z'} \Leftrightarrow \left(Re(z) = Re(z') \text{ et } Im(z)\equiv Im(z')\:[2\pi]\right).\]
+\[e^z = e^{z'} \Leftrightarrow \left(\Re(z) = \Re(z') \text{ et } \Im(z)\equiv \Im(z')\:[2\pi]\right).\]
 \end{proposition}
 \begin{proof}
 On a :
 \begin{align*}
 e^z = e^{z'} & \Leftrightarrow e^{z-z'} = 1\\
  & \Leftrightarrow z-z' \in 2i\pi\Z\\
-  & \Leftrightarrow \left( Re(z-z')=0 \text{ et } Im(z-z') \in 2\pi\Z\right)\\
-  & \Leftrightarrow \left( Re(z) = Re(z') \text{ et } Im(z)\equiv Im(z')\:[2\pi]\right).
+  & \Leftrightarrow \left( \Re(z-z')=0 \text{ et } \Im(z-z') \in 2\pi\Z\right)\\
+  & \Leftrightarrow \left( \Re(z) = \Re(z') \text{ et } \Im(z)\equiv \Im(z')\:[2\pi]\right).
 \end{align*}
 \end{proof}
 

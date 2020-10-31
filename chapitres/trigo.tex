@@ -1,10 +1,21 @@
 Toutes les formules de trigonométrie classiques peuvent se démontrer en utilisant les propriétés de l'exponentielle complexe. Tous les symboles non définis désignent des réels. À faire en exercice.
 
-\paragraph{Pythagore}
-
+\paragraph{Cercle}
+\begin{remarque}
+On rappelle que l'équation du cercle, ce n'est rien d'autre qu'une reformulation du théorème de Pythagore
+\end{remarque}
 Un point de coordonnées $(\cos x,\sin x)$ appartient au cercle unité :
 
 \[ \cos^2x+\sin^2x = 1\]
+\begin{remarque}
+Les expressions $\sqrt{1-\cos^2 x}$ et $\sqrt{1 - \sin^2 x}$ doivent être reconnues instantanément. Attention aux pièges, voir exercice ci-dessous.
+\end{remarque}
+\begin{exo}
+Montrer que l'assertion
+\[ \forall x\in \R, \sqrt{1-\cos^2 x} = \sin x\]
+est... fausse. Quelle est la formule correcte ?
+\end{exo}
+
 
 \paragraph{Somme}
 
@@ -16,7 +27,9 @@ Un point de coordonnées $(\cos x,\sin x)$ appartient au cercle unité :
 On en déduit, en appliquant ces formules lorsque $b=a$, les formules pour l'angle double:
 
 \begin{align*}
-\cos(2a) &= \cos^2 a - \sin^2 a = 2\cos^2 a-1 = 1-2\sin^2 a\\
+\cos(2a) &= \cos^2 a - \sin^2 a \\
+&= 2\cos^2 a-1 \\
+&= 1-2\sin^2 a\\
 \sin(2a)&= 2\sin a \cos a \\
 \end{align*}
 
@@ -68,7 +81,7 @@ Le point de coordonnées $(\pi/2,0)$ est un centre de symétrie pour le graphe d
 Déduire des formules de parité et imparité une formule pour $\cos(a-b)$ et $\sin(a-b)$. (À apprendre par c\oe ur également.)
 \end{exo}
 
-\paragraph{Symétries glissées}
+\paragraph{Symétries glissées\footnote{Une symétrie glissée est une symétrie axiale suivie d'une certaine translation}}
 \begin{exo}
 Montrer que les fonctions sinus et cosinus ne sont pas $\pi$-périodiques.
 \end{exo}
@@ -83,6 +96,7 @@ Ces formules se déduisent des précédentes.
 \paragraph{Passage du cosinus au sinus}
 
 \[ \cos(x)=\sin(\pi/2-x)\]
+\[ \sin(x)=\cos(\pi/2-x)\]
 
 
 
