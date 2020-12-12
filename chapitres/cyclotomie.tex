@@ -222,7 +222,7 @@ Cette preuve est belle mais peut sembler difficile en première lecture (utilisa
 
 Enfin, avant de déterminer les éléments de $\U_n$ de manière explicite, sous forme exponentielle, on peut remarquer, si l'on connaît déjà quelques résultats sur les polynômes, que l'ensemble $\U_n$ est forcément fini, de cardinal $\leq n$. En effet,en reformulant la définition de $\U_n$, on voit que c'est par définition l'ensemble des racines complexes du polynôme $X^n-1$. Ce polynôme est de degré $n$, et un polynôme de degré $n$ possède au maximum $n$ racines distinctes.
 
-Par ailleurs, nous avons déjà remarqué que l'élément $e^{2ik\pi/n}$ appartient à $\U_n$, puisque $\left(e^{2i\pi/n}\right)^n=e^{2i\pi}=1$. Un raisonnement semblable montre que pour tout $k\in\Z$, le nombre complexe $e^{2ik\pi/n}$ appartient à $\U_n$. On peut se convaincre assez rapidement que ceci nous fournit $n$ éléments disctincts de $\U_n$. En utilisant l'argument sur le nombre de racines d'un polynôme, on sait qu'il ne peut y en avoir plus et donc il n'y a pas d'autres éléments dans $\U_n$.
+Par ailleurs, nous avons déjà remarqué que l'élément $e^{2ik\pi/n}$ appartient à $\U_n$, puisque $\left(e^{2i\pi/n}\right)^n=e^{2i\pi}=1$. Un raisonnement semblable montre que pour tout $k\in\Z$, le nombre complexe $e^{2ik\pi/n}$ appartient à $\U_n$. On peut se convaincre assez rapidement que ceci nous fournit $n$ éléments distincts de $\U_n$. En utilisant l'argument sur le nombre de racines d'un polynôme, on sait qu'il ne peut y en avoir plus et donc il n'y a pas d'autres éléments dans $\U_n$.
 
 Cependant, comme le cours sur les polynômes n'est pas supposé connu à ce stade, nous donnerons par la suite une autre démonstration de ces résultats, plus concrète.
 
@@ -249,7 +249,31 @@ Par définition de ce qu'est une congruence, on obtient donc :
 %Ceci signifie que si $z\in\C$, alors \og$z\in\U_n$\fg{} est équivalente à \og$\exists k\in \llbracket 0,n-1\rrbracket, z=e^{2ik\pi/n}$.\fg
 %\end{remarque}
 
-Cette écriture explicite permet de donner une nouvelle démonstration du résultat sur la somme des racines $n$-èmes.
+Cette caractérisation permet de comprendre un peu mieux l'ensemble des racines de l'unité :
+\begin{proposition}
+Soit $z\in \C$. C'est une racine de l'unité si et seulement s'il est de la forme $e^{2i\pi t}$, avec $t\in \Q$.
+\end{proposition}
+\begin{proof}
+Montrons les deux parties de l'équivalence.
+\begin{itemize}
+\item D'une part, si $t\in \Q$, alors on peut l'écrire sous la forme d'une fraction : $t=p/q$, avec $p\in \Z$ et $q\in \N^*$. On a alors 
+\[ \left(e^{2i\pi t}\right)^q=e^{2i\pi qt} = e^{2i\pi p}=1,\]
+donc $e^{2i\pi t} \in \U_q$, et donc $e^{2i\pi t}$ est une racine de l'unité.
+\item Réciproquement, si $z$ est racine de l'unité, alors  il existe $n\in \N^*$ tel que $z\in \U_n$, et donc d'après la proposition précédente, il existe $k\in \llbracket 0,n-1\rrbracket$ tel que $z=e^{2ik\pi/n}$. En posant $t=k/n$, on a bien $t\in \Q$ et $z=e^{2i\pi t}$.
+\end{itemize}
+\end{proof}
+
+\begin{corollaire}
+L'inclusion $\U_\infty \subseteq \U$ est stricte, autrement dit il existe des nombres complexes de module un qui ne sont pas racine de l'unité.
+\end{corollaire}
+\begin{proof}
+Tous les nombres réels ne sont pas des rationnels. Par exemple, il est connu que $\sqrt 2 \not\in \Q$.\footnote{Voir le \og poly de logique de secours\fg{} distribué en début d'année, ou bien \url{https://github.com/dmegy/DecouverteDesMaths}.}
+Soit donc $t\in \R$ non rationnel. Le nombre complexe $e^{2i\pi t}$ est de module un, mais d'après la proposition précédente, ce n'est pas une racine de l'unité.
+Si on veut un exemple concret, le nombre complexe $e^{2i\pi\sqrt 2}$ n'est donc pas une racine de l'unité.
+\end{proof}
+
+
+L'écriture explicite des racines de l'unité sous forme exponentielle permet également de donner une nouvelle démonstration du fait que si $n\geq 2$, la somme de toutes les racines $n$-èmes est nulle.
 
 \begin{proposition}
 Soit $n$ un entier supérieur ou égal à deux. Alors la somme $S$ des racines $n$-èmes de l'unité est nulle, autrement dit:

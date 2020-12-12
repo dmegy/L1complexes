@@ -74,6 +74,9 @@
 \newcommand\eqdef{\mathrel{\overset{\makebox[0pt]{\mbox{\normalfont\tiny\sffamily déf}}}{=}}}
 % égal par définition
 
+\newcommand\oldvec\vec
+\renewcommand{\vec}{\overrightarrow}
+
 \newcommand{\ensemble}[2]{\left \{ #1  
     \ifx&#2&%
        %
@@ -95,7 +98,7 @@
 \newtheorem{proposition}[theoreme]{Proposition}
 \newtheorem{corollaire}[theoreme]{Corollaire}
 \newtheorem{lemme}[theoreme]{Lemme}
-\renewenvironment{proof}{\color{preuve}\emph{Démonstration.~}}{\qed}
+\renewenvironment{proof}{\color{preuve}\emph{Démonstration.~}}{\qed\vspace{1em}}
 \newenvironment{red}{\begin{quote}\color{preuve}\emph{Exemple de rédaction:}\\}{\end{quote}}
 
 \newtheorem{propdef}[theoreme]{Proposition et Définition}
@@ -289,6 +292,10 @@ En informatique, l'égalité et l'affectation ont des symboles différents (en g
 \section{Angles géométriques, angles orientés (en cours)}
 \label{sec:angles}
 \input{chapitres/angles.tex}
+
+\section{Résultats classiques sur les triangles et quadrilatères}
+\input{chapitres/polygones.tex}
+
 
 \chapter{Isométries}
 \minitoc
