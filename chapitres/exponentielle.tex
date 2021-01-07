@@ -87,7 +87,7 @@ L'image de l'exponentielle complexe est $\C^*$ :
 \[ \forall w\in\C^*, \exists z\in\C, e^z=w\]
 \end{proposition}
 \begin{proof}
-Soit $w\in\C^*$. Notons $z=|w|$. Alors $w'=\frac{w}{r}\in\U$. Il existe\footnote{C'est ici que l'on utilise une propriété forte des fonctions cosinus et sinus que l'on n'a pas démontrée entièrement, parce qu'au fond on n'a jamais défini correctement le cosinus et le sinus. On peut choisir $\theta = \arccos(\Re(w'))$ ou son opposé mais c'est pareil, la construction de l'arccosinus n'a pas été faite en détail et dépend évidemment d'une définition rigoureuse du cosinus, de sa continuité etc.} alors $\theta\in\R$ tel que $w'=\cos(\theta)+i\sin(\theta)$. On en déduit que $w'=e^{i\theta}$.
+Soit $w\in\C^*$. Notons $r=|w|$. Alors $w'=\frac{w}{r}\in\U$. Il existe\footnote{C'est ici que l'on utilise une propriété forte des fonctions cosinus et sinus que l'on n'a pas démontrée entièrement, parce qu'au fond on n'a jamais défini correctement le cosinus et le sinus. On peut choisir $\theta = \arccos(\Re(w'))$ ou son opposé mais c'est pareil, la construction de l'arccosinus n'a pas été faite en détail et dépend évidemment d'une définition rigoureuse du cosinus, de sa continuité etc.} alors $\theta\in\R$ tel que $w'=\cos(\theta)+i\sin(\theta)$. On en déduit que $w'=e^{i\theta}$.
 
 Mais alors, on peut écrire $w=re^{i\theta}$. Pour finir, comme $r>0$, c'est l'exponentielle\footnote{Pareil, on utilise des propriétés admises sur l'exponentielle réelle et le logarithme qui n'ont pas été totalement démontrées.} d'un certain réel $l$, à savoir $l = \ln(r)$. Finalement, $w=e^le^{i\theta} = e^{l+i\theta}$. En posant $z=l+i\theta$, on a bien
 \[ w = e^z.\]
