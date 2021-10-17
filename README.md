@@ -1,27 +1,61 @@
 L1complexes
 ===========
 
+Contenu de cette page
+---------------------
+Le polycopié de cours (avec la source), les liens vers les feuilles de TD, vers les annales, le programme officiel de l'UE, et des conseils.
+
+Application de vrai-faux
+------------------------
+
+Une petite appli a été codée pour vous permettre de vous entraîner au calcul: [http://dmegy.perso.math.cnrs.fr/vf/](http://dmegy.perso.math.cnrs.fr/vf/)
+
+Tous les premiers thèmes doivent être maîtrisés, pas seulement les thèmes sur les nombres complexes. Normalement, on arrive à 500pts assez rapidement.
+
 Cours
 -----
 
-Cette page github contient le polycopié de cours pour l'UE "Nombres complexes et géométrie" de 2021-2022:
+Le polycopié de cours est disponible ici :
 
 [L1complexes.pdf](L1complexes.pdf)
 
-Les TD et annales ne sont pas sur github, mais voici des liens directs (Nextcloud) vers les ressources :
+Ce polycopié est à travailler après avoir appris le cours fait en classe, pour consolider les connaissances. Il n'est pas forcément adapté à une première lecture.
 
 TD
 ---
 
+L'année a commencé par des rappels de géométrie plane de 1ère. Ces notions *doivent* être  maîtrisées. Si ce n'est pas le cas, retravaillez en profondeur un cours de 1ère et faites des exercices.
+
 [TD1 : rappels de géométrie plane](https://bul.univ-lorraine.fr/index.php/s/Nd4p7fc7zdQazaX)
 
-(Le début du cours et des TD a été fait dans l'UE "calculs et maths")
+(Pour le début du cours sur les nombres complexes, voir l'UE de tronc commun "Calculs et mathématiques" et ses feuilles de TD)
 
-[TD2 : module, racines carrées](https://bul.univ-lorraine.fr/index.php/s/PCygMBQbt9zMLFk)
+[TD2 : module, racines carrées complexes](https://bul.univ-lorraine.fr/index.php/s/PCygMBQbt9zMLFk)
 
 [TD3 : argument, exponentielle](https://bul.univ-lorraine.fr/index.php/s/JQTtwqzkxH4ES9Q)
 
+Exercices supplémentaires
+-------------------------
+
+Si vous avez des difficultés, les feuilles de TD ne seront pas suffisantes : lorsqu'un notion pose problème, ce n'est pas 2 ou 3 exercices qu'il faut faire, mais 20 ou 30, ou plus si besoin. Dans ce cas, il faudra travailler avec des ouvrages de la BU, ou des ressources en ligne. Sur le site exo7 [http://exo7.emath.fr/](http://exo7.emath.fr/), vous trouvez un très grand nombre d'exercices, corrigés ou non. (La quasi-totalité des exercices de nos feuilles  a été déposée sur cette base.)
+
 Annales corrigées
 -----------------
+Attention : lire les corrections avant d'essayer de faire les épreuves en conditions réelles revient à gaspiller la chance d'avoir des annales.
+
+Si vous avez besoin de lire des corrections d'exercices, il y en a des centaines à la BU ou sur le net.
+
+
+[Examen de janvier 2021 avec correction](https://bul.univ-lorraine.fr/index.php/s/Yb9tNG2Zb78JB73)
+
+[Partiel de novembre 2020 avec correction](https://bul.univ-lorraine.fr/index.php/s/oo8e285T48NX3qY)
+
+[Examen de janvier 2020 avec correction](https://bul.univ-lorraine.fr/index.php/s/4Pg3L78zGnSmQdy)
+
+[Partiel de novembre 2019 avec correction](https://bul.univ-lorraine.fr/index.php/s/zMfdyHTGf229awA)
+
+[Examen de janvier 2019 avec correction](https://bul.univ-lorraine.fr/index.php/s/2fxetaRnndfoMtZ)
+
+[Partiel d'octobre 2018 avec correction](https://bul.univ-lorraine.fr/index.php/s/7QYK8B3PMNkZyrE)
 
 
