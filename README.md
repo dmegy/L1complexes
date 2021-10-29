@@ -58,4 +58,11 @@ Si vous avez besoin de lire des corrections d'exercices, il y en a des centaines
 
 [Partiel d'octobre 2018 avec correction](https://bul.univ-lorraine.fr/index.php/s/7QYK8B3PMNkZyrE)
 
+Les barèmes exacts ne sont pas disponibles mais voici une idée de barème pour le partiel de novembre 2020, pour donner une idée. (En gros, les points sont proportionnels à la place que ça prend d'écrire le corrigé.)
+
+- Exo 1 : 5 pts (1+1+3)
+- Exo 2 : 2 pts
+- Exo 3 : 6 pts (2+1+1+2)
+- Exo 4 : 4 pts (2+2)
+- Exo 5 : 7 pts (1+1+1+1+3)
 
