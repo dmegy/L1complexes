@@ -53,6 +53,7 @@ Attention : lire les corrections avant d'essayer de faire les épreuves en condi
 
 Si vous avez besoin de lire des corrections d'exercices, il y en a des centaines à la BU ou sur le net.
 
+[Partiel de novembre 2021 avec correction](https://bul.univ-lorraine.fr/index.php/s/dmkCNLmxcdR9ipH)
 
 [Examen de janvier 2021 avec correction](https://bul.univ-lorraine.fr/index.php/s/Yb9tNG2Zb78JB73)
 
