@@ -34,6 +34,14 @@ L'année a commencé par des rappels de géométrie plane de 1ère. Ces notions 
 
 [TD3 : argument, exponentielle](https://bul.univ-lorraine.fr/index.php/s/JQTtwqzkxH4ES9Q)
 
+[TD4 : trigo](https://bul.univ-lorraine.fr/index.php/s/5wD4TnxCktFJS5B)
+
+[TD5 : géométrie](https://bul.univ-lorraine.fr/index.php/s/q3ZzfNm4bCYcKcS)
+
+[TD6 : racines de l'unité](https://bul.univ-lorraine.fr/index.php/s/4p9KpdZ7QdWgdYt)
+
+[TD7 : Isométries planes](https://bul.univ-lorraine.fr/index.php/s/iwgMSCrj4tcRgRw)
+
 Exercices supplémentaires
 -------------------------
 
