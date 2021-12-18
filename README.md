@@ -42,6 +42,8 @@ L'année a commencé par des rappels de géométrie plane de 1ère. Ces notions 
 
 [TD7 : Isométries planes](https://bul.univ-lorraine.fr/index.php/s/iwgMSCrj4tcRgRw)
 
+[TD7 : correction de la majorité des exercices](https://bul.univ-lorraine.fr/index.php/s/kKc2LRjCL9w5XrJ)
+
 Exercices supplémentaires
 -------------------------
 
